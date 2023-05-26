@@ -39,6 +39,27 @@ class CommandeRepository extends ServiceEntityRepository
         }
     }
 
+    public function mostpopplat(){
+            //TODO:Requête pour obtenir les 3 plats les plus populaires avec querybuilder
+
+            $result = $this->createQueryBuilder('c');
+        
+            $result
+                ->select('COUNT(c.id) AS nbr_vente, p.libelle, p.image, p.id, p.prix')
+                ->from('App\Entity\Commande', 'c')
+                ->join('c.details', 'd')
+                ->join('d.plat', 'p')
+                ->where('c.etat = :etat')
+                ->andWhere('p.active = :active')
+                ->setParameter('etat', 3)
+                ->setParameter('active', true)
+                ->groupBy('p.libelle')
+                ->orderBy('nbr_vente', 'DESC')
+                ->setMaxResults(3);
+    
+            return $result->getQuery()->getResult();
+        }
+
 //    /**
 //     * @return Commande[] Returns an array of Commande objects
 //     */
