@@ -14,17 +14,36 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AccueilController extends AbstractController
 {
+    //Mes entités
+    private $entityManager;
+    private $categorieRepository;
+    private $platRepository;
+    private $detailRepository;
+    private $commandeRepository;
+    private $utilisateurRepository;
+
+    //Constructeur
+    public function __construct(EntityManagerInterface $entityManager, CategorieRepository $categorieRepository, PlatRepository $platRepository, DetailRepository $detailRepository, CommandeRepository $commandeRepository, UtilisateurRepository $utilisateurRepository)
+    {
+        $this->entityManager = $entityManager;
+        $this->categorieRepository = $categorieRepository;
+        $this->platRepository = $platRepository;
+        $this->detailRepository = $detailRepository;
+        $this->commandeRepository = $commandeRepository;
+        $this->utilisateurRepository = $utilisateurRepository;
+    }
+
     #[Route('/accueil', name: 'app_accueil')]
-    public function index(EntityManagerInterface $entityManager, CategorieRepository $categorieRepository, PlatRepository $platRepository, DetailRepository $detailRepository, CommandeRepository $commandeRepository, UtilisateurRepository $utilisateurRepository): Response
+    public function index(): Response
     {
 
-        $utilisateurs =  $utilisateurRepository->findAll();
-        $commandes = $commandeRepository->findAll();
-        $details = $detailRepository->findAll();
-        $plats = $platRepository->findAll();
-        $categories = $categorieRepository->findAll();
+        $utilisateurs =  $this->utilisateurRepository->findAll();
+        $commandes = $this->commandeRepository->findAll();
+        $details = $this->detailRepository->findAll();
+        $plats = $this->platRepository->findAll();
+        $categories = $this->categorieRepository->findAll();
 
-        //Requête pour afficher les 6 catégories les plus populaires et completer avec d'autres s'il la base n'est pas alimentée pour obtenir 6
+        //Requête pour afficher les 6 catégories les plus populaires et completer avec d'autres si la base n'est pas assez alimentée pour obtenir un total de 6
         $query = <<<SQL
         SELECT T1.libelle, T1.image, T1.id
         FROM (
@@ -44,11 +63,11 @@ class AccueilController extends AbstractController
         LIMIT 6
         SQL;
 
-        $connection = $entityManager->getConnection();
+        $connection = $this->entityManager->getConnection();
         $statement = $connection->executeQuery($query);
         $results = $statement->fetchAllAssociative();
 
-        $mostpopplat = $commandeRepository->mostpopplat();
+        $mostpopplat = $this->commandeRepository->mostpopplat();
 
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',
