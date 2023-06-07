@@ -34,7 +34,7 @@ class Plat
     #[ORM\ManyToOne(inversedBy: 'plats')]
     private ?Categorie $categorie = null;
 
-    #[ORM\OneToMany(mappedBy: 'plat', targetEntity: detail::class)]
+    #[ORM\OneToMany(mappedBy: 'plat', targetEntity: Detail::class)]
     private Collection $details;
 
     public function __construct()
@@ -45,6 +45,13 @@ class Plat
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getLibelle(): ?string

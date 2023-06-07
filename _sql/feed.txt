@@ -24,6 +24,8 @@ INSERT INTO `plat` (`id`, `libelle`, `description`, `prix`, `image`, `categorie_
 	(18, 'Pizza Royale', 'La pizza Royale est une savoureuse création culinaire, garnie de jambon, champignons, poivrons, oignons et olives noires. Sa croûte croustillante en fait un choix parfait pour les amateurs de pizza. La pizza est cuite à la perfection et est idéale pour une soirée pizza entre amis ou pour une soirée de détente en famille.', 14.90, 'pizza_royale.webp', 4,1),
 	(19, 'Pizza Hawaïenne', 'La pizza hawaïenne est une délicieuse création culinaire originaire de l\'archipel polynésien. Elle est garnie d\'une sauce tomate savoureuse, de mozzarella fondante, de jambon cuit et d\'ananas frais qui apportent une touche sucrée et acidulée. Cette pizza est un choix populaire pour ceux qui cherchent un peu d\'exotisme dans leur repas.', 14.00, 'pizza-hawaienne.webp', 4,1);
 
+
+
     -- OK
 
 INSERT INTO `utilisateur` (`id`, `email`, `password`, `nom`, `prenom`, `telephone`, `adresse`, `cp`, `ville`, `roles`) VALUES

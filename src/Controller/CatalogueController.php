@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AccueilController extends AbstractController
+class CatalogueController extends AbstractController
 {
     //Mes entités
     private $entityManager;
@@ -33,7 +33,7 @@ class AccueilController extends AbstractController
         $this->utilisateurRepository = $utilisateurRepository;
     }
 
-    #[Route('/accueil', name: 'app_accueil')]
+    #[Route('/', name: 'app_accueil')]
     public function index(): Response
     {
 
@@ -69,10 +69,26 @@ class AccueilController extends AbstractController
 
         $mostpopplat = $this->commandeRepository->mostpopplat();
 
-        return $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
+        return $this->render('catalogue/index.html.twig', [
+            'controller_name' => 'CatalogueController',
             'topsix' => $results,
             'mp_plat' => $mostpopplat,
+        ]);
+    }
+
+    #[Route('/cgu', name: 'app_cgu')]
+    public function cgu(): Response
+    {
+        return $this->render('cgu/index.html.twig', [
+            'controller_name' => 'CatalogueController',
+        ]);
+    }
+
+    #[Route('/legal', name: 'app_ml')]
+    public function legal(): Response
+    {
+        return $this->render('ml/index.html.twig', [
+            'controller_name' => 'CatalogueController',
         ]);
     }
 }
