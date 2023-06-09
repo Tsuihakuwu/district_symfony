@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes nos catégories{% endblock %}
+
+{% block body %}
+
+<main>
+    <h1 class="d-flex justify-content-center mt-2">Toutes nos catégories</h1>
+    <hr class="w-75 mx-auto mt-0 mb-3">
+
+    <div class="d-flex justify-content-around flex-wrap mt-3">
+
+        {# FIXME:Ajouter l'id de la catégorie pour filtrer la vue #}
+        {% for categorie in cat %}
+            <a href="{{ path('app_platwithcat', {'categorie_id':categorie.id}) }}">
+                <div class="card mb-3 border-0 shd text-white">
+                    <h5 class="card-header">{{ categorie.libelle }}</h5>
+                    <div class="imgof">
+                        <img src="{{ asset('/img/category/')}}{{ categorie.image }}" class="card-img-bottom" alt="{{ categorie.image }}">
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        <hr class="w-75 mx-auto mt-0 mb-3">
+    </div>
+</main>
+{% endblock %}
