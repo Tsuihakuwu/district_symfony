@@ -16,7 +16,7 @@
                 <div class="card mb-3 border-0 shd text-white">
                     <h5 class="card-header">{{ categorie.libelle }}</h5>
                     <div class="imgof">
-                        <img src="{{ asset('/img/category/')}}{{ categorie.image }}" class="card-img-bottom" alt="{{ categorie.image }}">
+                        <img src="{{asset(image_dir ~ categorie.image) }}" class="card-img-bottom" alt="{{ categorie.image }}">
                     </div>
                 </div>
             </a>

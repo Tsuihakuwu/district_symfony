@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PlatController!{% endblock %}
+{% block title %}Tout nos plats{% endblock %}
 
 {% block body %}
 
@@ -12,7 +12,7 @@
             <div class="card mb-3 border-0 shd text-white" style="max-width:45%;">
                 <div class="row g-0">
                     <div class="col-md-6 imgof">
-                        <img src="{{asset('/img/food/')}}{{plat.image}}" class="img-fluid rounded-start" alt="{{plat.image}}">
+                        <img src="{{asset(image_dir ~ plat.image)}}" class="img-fluid rounded-start" alt="{{plat.image}}">
                     </div>
                     <div class="card-body h-100 col-md-6 align-items-center">
                         <h5 class="card-title d-flex justify-content-center">{{plat.libelle}}</h5>

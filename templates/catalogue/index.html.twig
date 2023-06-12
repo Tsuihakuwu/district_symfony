@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}The District
+{% block title %}Index
 {% endblock %}
 
 {% block body %}
@@ -22,10 +22,10 @@
 
 			{% for cat in topsix %}
 				<div class="card mb-3 mx-3 border-0 p-0 shd text-white col-3">
-					<a href="#">
+					<a href="{{ path('app_platwithcat', {'categorie_id':cat.id}) }}">
 						<h5 class="card-header">{{cat.libelle}}</h5>
 						<div class="imgof">
-							<img src="{{asset('img/category/')}}{{cat.image}}" class="card-img-bottom" alt="{{cat.image}}">
+							<img src="{{asset(image_dir ~ cat.image)}}" class="card-img-bottom" alt="{{cat.image}}">
 						</div>
 					</a>
 				</div>
@@ -51,7 +51,7 @@
 						</div>
 					</h5>
 					<div class="imgof">
-						<img src="{{asset('img/food/')}}{{plats.image}}" class="card-img-bottom" alt="{{plats.image}}">
+						<img src="{{asset(image_dir ~ plats.image)}}" class="card-img-bottom" alt="{{plats.image}}">
 					</div>
 					<div class="d-flex align-items-center">
 						<a href="?page=commande&id_plat=<?= $plat_sample->id_plat ?>">

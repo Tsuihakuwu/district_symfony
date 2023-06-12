@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class CatalogueController extends AbstractController
 {
@@ -64,6 +65,8 @@ class CatalogueController extends AbstractController
         $connection = $this->entityManager->getConnection();
         $statement = $connection->executeQuery($query);
         $results = $statement->fetchAllAssociative();
+
+        //Tentative d'utiliser le query builder pour passer l'union en éclatant la sous-requête
 
         // $subquery = $this->entityManager->createQuery('SELECT categorie.libelle, categorie.image, categorie.id
         // FROM detail
@@ -131,7 +134,7 @@ class CatalogueController extends AbstractController
         $plats = $this->platRepository->findBy(['active' => true]);
 
         return $this->render('plat/index.html.twig', [
-            'controller_name' => 'CatalogueController',
+            'controller_name' => 'CatalogueController/app_plat',
             'plats' => $plats
         ]);
     }
@@ -139,18 +142,19 @@ class CatalogueController extends AbstractController
     #[Route('/plat/{categorie_id}', name: 'app_platwithcat')]
     public function platwithcat(Request $request, Categorie $categorie_id): Response
     {
-        // TODO:Utiliser l'id récupéré de l'objet pour créer la vue findby idcat
-        // dd($categorie_id);
         if($request->get('categorie_id')){
             $categorie_id = $request->get('categorie_id');
-            
         }
+        
         $utilisateurs =  $this->utilisateurRepository->findAll();
         $plats = $this->platRepository->findBy(['active' => true, 'categorie' => $categorie_id]);
 
-        return $this->render('plat/index.html.twig', [
-            'controller_name' => 'CatalogueController',
-            'plats' => $plats
-        ]);
+        if(count($plats)>0){
+            return $this->render('plat/index.html.twig', [
+                'controller_name' => 'CatalogueController/app_platwithcat',
+                'plats' => $plats
+            ]);
+        }
+        else { throw new NotFoundHttpException('Le produit n\'existe pas !'); };
     }
 }

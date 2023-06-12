@@ -15,8 +15,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
 
 		<title>
-			{% block title %}The District
-			{% endblock %}
+			The District - {% block title %}{% endblock %}
 		</title>
 
 	</head>
@@ -35,7 +34,7 @@
 					<nav class="navbar navbar-expand-md rounded p-0 mnb">
 						<div id="menu_container" class="container-fluid">
 							<a class="navbar-brand col-4 col-md-2 mx-4 my-3" href="{{ path('app_accueil') }}">
-								<img src="{{asset('img/logo_transparent_sm.webp')}}" alt="responsive_logo_the_district" class="img-fluid logo_rt">
+								<img src="{{asset(image_dir ~ 'logo_transparent_sm.webp')}}" alt="responsive_logo_the_district" class="img-fluid logo_rt">
 							</a>
 							<button class="navbar-toggler mx-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 								<span class="navbar-toggler-icon">
@@ -70,16 +69,16 @@
 					<ul class="justify-content-center row mb-0 mt-2 px-0">
 						<div class="col-7 col-md-4 row justify-content-center">
 							<li class="list-group-item bg-transparent border-0 col-2 col-md-1 mx-3 p-2">
-								<a href="#"><img class="img-fluid" src="{{asset('img/socials/facebook-svgrepo-com.svg')}}" alt="socials_facebook"></a>
+								<a href="#"><img class="img-fluid" src="{{asset(image_dir ~ 'facebook-svgrepo-com.svg')}}" alt="socials_facebook"></a>
 							</li>
 							<li class="list-group-item bg-transparent border-0 col-2 col-md-1 mx-3 p-2">
-								<a href="#"><img class="img-fluid " src="{{asset('img/socials/twitter-154-svgrepo-com.svg')}}" alt="socials_instagram"></a>
+								<a href="#"><img class="img-fluid " src="{{asset(image_dir ~ 'twitter-154-svgrepo-com.svg')}}" alt="socials_instagram"></a>
 							</li>
 							<li class="list-group-item bg-transparent border-0 col-2 col-md-1 mx-3 p-2">
-								<a href="#"><img class="img-fluid" src="{{asset('img/socials/instagram-167-svgrepo-com.svg')}}" alt="socials_twitter"></a>
+								<a href="#"><img class="img-fluid" src="{{asset(image_dir ~ 'instagram-167-svgrepo-com.svg')}}" alt="socials_twitter"></a>
 							</li>
 							<li class="list-group-item bg-transparent border-0 col-2 col-md-1 mx-3 p-2">
-								<a href="#"><img class="img-fluid" src="{{asset('img/socials/onlyfans-svgrepo-com.svg')}}" alt="socials_onlyfans"></a>
+								<a href="#"><img class="img-fluid" src="{{asset(image_dir ~ 'onlyfans-svgrepo-com.svg')}}" alt="socials_onlyfans"></a>
 							</li>
 						</div>
 					</ul>
