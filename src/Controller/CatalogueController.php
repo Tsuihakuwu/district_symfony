@@ -102,7 +102,7 @@ class CatalogueController extends AbstractController
     public function cgu(): Response
     {
         return $this->render('cgu/index.html.twig', [
-            'controller_name' => 'CatalogueController',
+            'controller_name' => 'CatalogueController - CGU',
         ]);
     }
 
@@ -110,7 +110,7 @@ class CatalogueController extends AbstractController
     public function legal(): Response
     {
         return $this->render('ml/index.html.twig', [
-            'controller_name' => 'CatalogueController',
+            'controller_name' => 'CatalogueController - Legal',
         ]);
     }
 
@@ -121,7 +121,7 @@ class CatalogueController extends AbstractController
         $categories = $this->categorieRepository->findBy(['active' => true]);
 
         return $this->render('categorie/index.html.twig', [
-            'controller_name' => 'CatalogueController',
+            'controller_name' => 'CatalogueController - Categorie',
             'cat' => $categories,
         ]);
     }
@@ -134,7 +134,7 @@ class CatalogueController extends AbstractController
         $plats = $this->platRepository->findBy(['active' => true]);
 
         return $this->render('plat/index.html.twig', [
-            'controller_name' => 'CatalogueController/app_plat',
+            'controller_name' => 'CatalogueController - Plats',
             'plats' => $plats
         ]);
     }
@@ -151,7 +151,7 @@ class CatalogueController extends AbstractController
 
         if(count($plats)>0){
             return $this->render('plat/index.html.twig', [
-                'controller_name' => 'CatalogueController/app_platwithcat',
+                'controller_name' => 'CatalogueController - Plats par categorie',
                 'plats' => $plats
             ]);
         }
