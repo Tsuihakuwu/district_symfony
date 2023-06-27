@@ -38,10 +38,20 @@ class PanierController extends AbstractController
     public function index(): Response
     {
         $panier = $this->panier->getPanier();
-        
+        if($panier != NULL){
+            $total = $this->panier->getTotalPrix();
+            $qtt = $this->panier->getTotalQuantity();
+        }
+        else {
+            $total = 0;
+            $qtt = "";
+        }
+       
         return $this->render('panier/index.html.twig', [
             'controller_name' => 'PanierController - Main',
             'panier' => $panier,
+            'totalprix' => $total,
+            'total_qtt' => $qtt
         ]);
     }
 
@@ -51,6 +61,7 @@ class PanierController extends AbstractController
         $this->utilisateurRepository->findAll();
         $this->commandeRepository->findAll();
 
+        //AJOUT
 
         if($request->get('id_plat')){
             $id_plat = $request->get('id_plat');
@@ -60,9 +71,35 @@ class PanierController extends AbstractController
 
         $this->panier->ajouterPlat($plat,1);
 
-        return $this->render('panier/index.html.twig', [
-            'controller_name' => 'PanierController - Ajout',
-            'panier' => $this->panier,
-        ]);
+        return $this->redirectToRoute('app_panier');
+    }
+    
+    #[Route('/panier/delete/{id_plat}', name: 'app_panier_delete')]
+    public function delete_plat(Request $request): Response
+    {
+        $this->utilisateurRepository->findAll();
+        $this->commandeRepository->findAll();
+
+        //DELETE
+
+        if($request->get('id_plat')){
+            $id_plat = $request->get('id_plat');
+        }
+
+        $plat = $this->platRepository->findOneBy(['id' => $id_plat]);
+
+        $this->panier->supprimerPlat($plat);
+
+        return $this->redirectToRoute('app_panier');
+    }
+
+    #[Route('/panier/vider', name: 'app_panier_vider')]
+    public function vider_panier(Request $request): Response
+    {
+        //VIDER LE PANIER
+
+        $this->panier->viderPanier();
+
+        return $this->redirectToRoute('app_panier');
     }
 }

@@ -17,12 +17,10 @@ class PanierService
     public function getPanier()
     {
         $session = $this->requestStack->getSession();
-        if($session->get('panier') != NULL) {
-            return $session->set('panier', []);
-        }
-        else
-        {
+        if ($session->get('panier') != NULL) {
             return $session->get('panier');
+        } else {
+            return $session->set('panier', []);
         }
     }
 
@@ -74,5 +72,36 @@ class PanierService
             $panier[$idPlat]['quantite'] = $quantite;
             $this->setPanier($panier);
         }
+    }
+
+    public function getTotalPrix(): float
+    {
+        $totalPrix = 0.0;
+
+        foreach ($this->getpanier() as $item) {
+            $plat = $item['Plat'];
+            $quantite = $item['quantite'];
+            $prix = $plat->getPrix();
+
+            $totalPrix += $prix * $quantite;
+        }
+
+        return $totalPrix;
+    }
+
+    public function getTotalQuantity(): int
+    {
+        $panier = $this->getPanier();
+        if ($panier == NULL) {
+            $totalQuantity = 0;
+        } else {
+            $totalQuantity = 0;
+
+            foreach ($panier as $plat) {
+                $totalQuantity += $plat['quantite'];
+            }
+        }
+
+        return $totalQuantity;
     }
 }

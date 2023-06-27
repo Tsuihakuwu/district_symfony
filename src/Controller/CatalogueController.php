@@ -8,6 +8,7 @@ use App\Repository\CommandeRepository;
 use App\Repository\DetailRepository;
 use App\Repository\PlatRepository;
 use App\Repository\UtilisateurRepository;
+use App\Service\PanierService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,10 +25,12 @@ class CatalogueController extends AbstractController
     private $detailRepository;
     private $commandeRepository;
     private $utilisateurRepository;
+    private $panier;
 
     //Constructeur
-    public function __construct(EntityManagerInterface $entityManager, CategorieRepository $categorieRepository, PlatRepository $platRepository, DetailRepository $detailRepository, CommandeRepository $commandeRepository, UtilisateurRepository $utilisateurRepository)
+    public function __construct(PanierService $panier, EntityManagerInterface $entityManager, CategorieRepository $categorieRepository, PlatRepository $platRepository, DetailRepository $detailRepository, CommandeRepository $commandeRepository, UtilisateurRepository $utilisateurRepository, PanierService $panierService)
     {
+        $this->panier = $panierService;
         $this->entityManager = $entityManager;
         $this->categorieRepository = $categorieRepository;
         $this->platRepository = $platRepository;
@@ -43,6 +46,9 @@ class CatalogueController extends AbstractController
         $this->utilisateurRepository->findAll();
 
         //Requête pour afficher les 6 catégories les plus populaires et completer avec d'autres si la base n'est pas assez alimentée pour obtenir un total de 6
+        
+        //FIXME:Supprimer une fois la BDD alimentée
+        
         $query = <<<SQL
         SELECT T1.libelle, T1.image, T1.id
         FROM (
@@ -91,26 +97,41 @@ class CatalogueController extends AbstractController
 
         $mostpopplat = $this->commandeRepository->mostpopplat();
 
+        $panier = $this->panier->getPanier();
+        $qtt = $this->panier->getTotalQuantity();
+
         return $this->render('catalogue/index.html.twig', [
             'controller_name' => 'CatalogueController',
             'topsix' => $results,
             'mp_plat' => $mostpopplat,
+            'panier' => $panier,
+            'total_qtt' => $qtt,
         ]);
     }
 
     #[Route('/cgu', name: 'app_cgu')]
     public function cgu(): Response
     {
+        $panier = $this->panier->getPanier();
+        $qtt = $this->panier->getTotalQuantity();
+
         return $this->render('cgu/index.html.twig', [
             'controller_name' => 'CatalogueController - CGU',
+            'panier' => $panier,
+            'total_qtt' => $qtt,
         ]);
     }
 
     #[Route('/legal', name: 'app_ml')]
     public function legal(): Response
     {
+        $panier = $this->panier->getPanier();
+        $qtt = $this->panier->getTotalQuantity();
+
         return $this->render('ml/index.html.twig', [
             'controller_name' => 'CatalogueController - Legal',
+            'panier' => $panier,
+            'total_qtt' => $qtt,
         ]);
     }
 
@@ -119,10 +140,14 @@ class CatalogueController extends AbstractController
     {
         $utilisateurs =  $this->utilisateurRepository->findAll();
         $categories = $this->categorieRepository->findBy(['active' => true]);
+        $panier = $this->panier->getPanier();
+        $qtt = $this->panier->getTotalQuantity();
 
         return $this->render('categorie/index.html.twig', [
             'controller_name' => 'CatalogueController - Categorie',
             'cat' => $categories,
+            'panier' => $panier,
+            'total_qtt' => $qtt,
         ]);
     }
 
@@ -132,10 +157,14 @@ class CatalogueController extends AbstractController
 
         $utilisateurs =  $this->utilisateurRepository->findAll();
         $plats = $this->platRepository->findBy(['active' => true]);
+        $panier = $this->panier->getPanier();
+        $qtt = $this->panier->getTotalQuantity();
 
         return $this->render('plat/index.html.twig', [
             'controller_name' => 'CatalogueController - Plats',
-            'plats' => $plats
+            'plats' => $plats,
+            'panier' => $panier,
+            'total_qtt' => $qtt,
         ]);
     }
 
@@ -148,11 +177,15 @@ class CatalogueController extends AbstractController
         
         $utilisateurs =  $this->utilisateurRepository->findAll();
         $plats = $this->platRepository->findBy(['active' => true, 'categorie' => $categorie_id]);
+        $panier = $this->panier->getPanier();
+        $qtt = $this->panier->getTotalQuantity();
 
         if(count($plats)>0){
             return $this->render('plat/index.html.twig', [
                 'controller_name' => 'CatalogueController - Plats par categorie',
-                'plats' => $plats
+                'plats' => $plats,
+                'panier' => $panier,
+                'total_qtt' => $qtt,
             ]);
         }
         else { throw new NotFoundHttpException('Le produit n\'existe pas !'); };

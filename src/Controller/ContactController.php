@@ -14,6 +14,8 @@ use App\Service\MailService;
 
 class ContactController extends AbstractController
 {
+    private $panier;
+
     #[Route('/contact', name: 'app_contact')]
     public function index(Request $request, EntityManagerInterface $entityManager, MailService $ms): Response
     {
@@ -42,7 +44,7 @@ class ContactController extends AbstractController
 
         return $this->render('contact/index.html.twig', [
             'controller_name' => 'ContactController',
-            'form' => $form
+            'form' => $form,
         ]);
     }
 }
