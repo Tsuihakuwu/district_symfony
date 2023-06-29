@@ -42,7 +42,7 @@ class CatalogueController extends AbstractController
     #[Route('/', name: 'app_accueil')]
     public function index(): Response
     {
-
+        $this->commandeRepository->findAll();
         $this->utilisateurRepository->findAll();
 
         //Requête pour afficher les 6 catégories les plus populaires et completer avec d'autres si la base n'est pas assez alimentée pour obtenir un total de 6
