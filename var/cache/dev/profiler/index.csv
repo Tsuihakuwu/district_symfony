@@ -680,3 +680,6 @@ b046ac,127.0.0.1,GET,https://localhost:8000/profil/update,1688475994,4cb217,500
 1442fa,127.0.0.1,GET,https://localhost:8000/profil,1688476031,,200
 0ffb42,127.0.0.1,POST,https://localhost:8000/profil/update,1688476033,,302
 96da66,127.0.0.1,GET,https://localhost:8000/profil,1688476033,,200
+eb5175,127.0.0.1,GET,https://localhost:8000/logout,1688476706,,302
+876e90,127.0.0.1,GET,https://localhost:8000/,1688476706,,200
+906b64,127.0.0.1,GET,https://localhost:8000/login,1688476707,,200
