@@ -56,6 +56,30 @@ class UtilisateurRepository extends ServiceEntityRepository implements PasswordU
         $this->save($user, true);
     }
 
+    public function updateUser($email,$nom,$prenom,$telephone,$adresse,$cp,$ville) {
+    
+    $qb = $this->createQueryBuilder('u');
+
+    $query = $qb->update('App\Entity\Utilisateur', 'u')
+        ->set('u.nom', ':nom')
+        ->set('u.prenom', ':prenom')
+        ->set('u.telephone', ':telephone')
+        ->set('u.adresse', ':adresse')
+        ->set('u.cp', ':cp')
+        ->set('u.ville', ':ville')
+        ->where('u.email = :email')
+        ->setParameter('email', $email)
+        ->setParameter('nom', $nom)
+        ->setParameter('prenom', $prenom)
+        ->setParameter('telephone', $telephone)
+        ->setParameter('adresse', $adresse)
+        ->setParameter('cp', $cp)
+        ->setParameter('ville', $ville)
+        ->getQuery();
+
+    $query->execute();
+    }
+
 //    /**
 //     * @return Utilisateur[] Returns an array of Utilisateur objects
 //     */

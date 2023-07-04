@@ -1,16 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon profil
-{% endblock %}
+{% block title %}Mon profil{% endblock %}
 
 {% block body %}
 
 	<main>
-		<h1 class="d-flex justify-content-center mt-3">Vos informations</h1>
+		<h1 class="d-flex justify-content-center mt-3">Vos coordonnées</h1>
 		<hr class="w-75 mx-auto mt-0 mb-3">
 		<div class="mnb rounded p-4 d-flex justify-content-center">
 			<div class="w-25">
-				<form method="POST" action="{{ path('app_profile_update') }}" class="profile-form">
+				<form method="POST" action="{{ path('app_profil_update') }}" class="profile-form">
 					<div class="form-group text-center">
 						<label for="email">Adresse Mail:</label>
 						<input type="email" id="email" name="email" value="{{ informations.email }}" class="form-control" required>
@@ -40,12 +39,16 @@
 						<label for="ville">Ville:</label>
 						<input type="text" id="ville" name="ville" value="{{ informations.ville }}" class="form-control" required>
 					</div>
+                    <hr class="w-75 mx-auto mt-4 mb-3">
 					<div class="form-group text-center">
 						<label for="commandes">Nombre de commandes:</label>
-						<input type="text" id="commandes" name="commandes" value="{{ informations.commandes|length }}" class="form-control" disabled>
+						<input type="text" id="commandes" name="commandes" value="{{ informations.commandes|length }}" class="form-control mb-3" disabled>
+                        <a href="#" class="text-primary">Mon historique de commandes</a>
+                        {# TODO: Historique de commandes #}
 					</div>
+                    <hr class="w-75 mx-auto mt-4 mb-3">
 					<div class="text-center mt-4">
-						<button type="submit" class="btn btn-primary ">Enregistrer les modifications</button>
+						<button type="submit" class="btn btn-light ">Enregistrer les modifications</button>
 					</div>
 				</form>
 			</div>

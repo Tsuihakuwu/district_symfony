@@ -55,6 +55,14 @@
 									<li class="nav-item mx-4">
 										<a class="nav-link text-white" href="{{ path('app_plat') }}">Plats</a>
 									</li>
+									<li class="nav-item mx-4 mb-4 mb-md-0">
+										<a class="nav-link text-white" href="{{path('app_contact')}}">Contact</a>
+									</li>
+									{% if app.user %}
+										<li class="nav-item mx-4 mb-4 mb-md-0">
+											<a class="nav-link text-white" href="{{path('app_profil')}}">Mon profil</a>
+										</li>
+									{% endif %}
 									<li class="nav-item mx-4 mb-4 mb-md-0 d-flex">
 										<a class="nav-link text-white" href="{{path('app_panier')}}">Panier</a>
 										{% if panier is defined %}
@@ -68,9 +76,6 @@
 												{% endif %}
 											</div>
 										{% endif %}
-									</li>
-									<li class="nav-item mx-4 mb-4 mb-md-0">
-										<a class="nav-link text-white" href="{{path('app_contact')}}">Contact</a>
 									</li>
 								</ul>
 								{% if app.user %}
@@ -92,6 +97,18 @@
 						</div>
 					</nav>
 				</header>
+
+				{% for message in app.flashes('success') %}
+					<div class="alert alert-success text-center">
+						{{ message }}
+					</div>
+				{% endfor %}
+				{% for message in app.flashes('error') %}
+					<div class="alert alert-danger text-center">
+						{{ message }}
+					</div>
+				{% endfor %}
+
 
 				{% block body %}{% endblock %}
 

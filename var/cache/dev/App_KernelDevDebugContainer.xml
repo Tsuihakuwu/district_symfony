@@ -7431,6 +7431,12 @@
         <argument key="ms" type="service_closure" id="App\Service\MailService"/>
       </argument>
     </service>
+    <service id=".service_locator.CsMkqUa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.e_4zbH4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7450,11 +7456,12 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.JnKM3sj" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Ukjidvp" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CatalogueController::platwithcat" type="service_closure" id=".service_locator.xy98O4_"/>
         <argument key="App\Controller\ContactController::index" type="service_closure" id=".service_locator.lWkCXHI"/>
+        <argument key="App\Controller\ProfilController::profil_update" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.e_4zbH4"/>
         <argument key="App\Controller\RegistrationController::verifyUserEmail" type="service_closure" id=".service_locator.1Z9fEX7"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.rSTd.nA"/>
@@ -7464,6 +7471,7 @@
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="App\Controller\CatalogueController:platwithcat" type="service_closure" id=".service_locator.xy98O4_"/>
         <argument key="App\Controller\ContactController:index" type="service_closure" id=".service_locator.lWkCXHI"/>
+        <argument key="App\Controller\ProfilController:profil_update" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.e_4zbH4"/>
         <argument key="App\Controller\RegistrationController:verifyUserEmail" type="service_closure" id=".service_locator.1Z9fEX7"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.rSTd.nA"/>
@@ -8365,12 +8373,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.JnKM3sj"/>
+      <argument type="service" id=".service_locator.Ukjidvp"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.JnKM3sj"/>
+      <argument type="service" id=".service_locator.Ukjidvp"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9360,7 +9368,7 @@
     <service id="EasyCorp\Bundle\EasyAdminBundle\Menu\MenuItemMatcherInterface" alias="EasyCorp\Bundle\EasyAdminBundle\Menu\MenuItemMatcher"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.JnKM3sj"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Ukjidvp"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9383,7 +9391,7 @@
     <service id=".service_locator.Mo0FXEU" alias="service_locator_EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     <service id=".service_locator.o.uf2zi" alias=".service_locator.7nzbL4K"/>
     <service id=".service_locator.V6D1oJY" alias=".service_locator.e_4zbH4"/>
-    <service id=".service_locator.gcWTTXC" alias=".service_locator.JnKM3sj"/>
+    <service id=".service_locator.Wht.D4G" alias=".service_locator.Ukjidvp"/>
     <service id=".service_locator.9XMoc9I" alias=".service_locator.kzegaci"/>
     <service id=".service_locator.h7V7z68" alias=".service_locator.oXIHdoy"/>
     <service id=".service_locator.aPRHAif" alias=".service_locator._XtfAIP"/>
@@ -9439,6 +9447,7 @@
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
     <service id=".service_locator.IWsdG5e" alias=".service_locator.xy98O4_"/>
     <service id=".service_locator.CKLOPes" alias=".service_locator.lWkCXHI"/>
+    <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
     <service id=".service_locator.qnm_CJ1" alias=".service_locator.e_4zbH4"/>
     <service id=".service_locator.5cKt1SW" alias=".service_locator.1Z9fEX7"/>
     <service id=".service_locator.7NIAq8D" alias=".service_locator.rSTd.nA"/>

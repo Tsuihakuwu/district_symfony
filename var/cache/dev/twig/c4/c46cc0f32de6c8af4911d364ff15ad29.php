@@ -86,27 +86,7 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 7
-        echo "
-\t";
-        // line 8
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 8));
-        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 9
-            echo "\t\t<div class=\"alert alert-success text-center\">
-\t\t\t";
-            // line 10
-            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-            echo "
-\t\t</div>
-\t";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 13
-        echo "
-\t<main class=\"mt-4\">
+        echo "\t<main class=\"mt-4\">
 
 \t\t<div class=\"mx-3 mt-5 mb-4 p-3 rounded mnb\">
 \t\t\t<form action=\"#\" method=\"GET\">
@@ -122,26 +102,26 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 \t\t<div class=\"justify-content-around row d-none d-md-flex\">
 
 \t\t\t";
-        // line 29
+        // line 22
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["topsix"]) || array_key_exists("topsix", $context) ? $context["topsix"] : (function () { throw new RuntimeError('Variable "topsix" does not exist.', 29, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["topsix"]) || array_key_exists("topsix", $context) ? $context["topsix"] : (function () { throw new RuntimeError('Variable "topsix" does not exist.', 22, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["cat"]) {
-            // line 30
+            // line 23
             echo "\t\t\t\t<div class=\"card mb-3 mx-3 border-0 p-0 shd text-white col-3\">
 \t\t\t\t\t<a href=\"";
-            // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_platwithcat", ["categorie_id" => twig_get_attribute($this->env, $this->source, $context["cat"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_platwithcat", ["categorie_id" => twig_get_attribute($this->env, $this->source, $context["cat"], "id", [], "any", false, false, false, 24)]), "html", null, true);
             echo "\">
 \t\t\t\t\t\t<h5 class=\"card-header\">";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "libelle", [], "any", false, false, false, 32), "html", null, true);
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "libelle", [], "any", false, false, false, 25), "html", null, true);
             echo "</h5>
 \t\t\t\t\t\t<div class=\"imgof\">
 \t\t\t\t\t\t\t<img src=\"";
-            // line 34
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(((isset($context["image_dir"]) || array_key_exists("image_dir", $context) ? $context["image_dir"] : (function () { throw new RuntimeError('Variable "image_dir" does not exist.', 34, $this->source); })()) . twig_get_attribute($this->env, $this->source, $context["cat"], "image", [], "any", false, false, false, 34))), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(((isset($context["image_dir"]) || array_key_exists("image_dir", $context) ? $context["image_dir"] : (function () { throw new RuntimeError('Variable "image_dir" does not exist.', 27, $this->source); })()) . twig_get_attribute($this->env, $this->source, $context["cat"], "image", [], "any", false, false, false, 27))), "html", null, true);
             echo "\" class=\"card-img-bottom\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "image", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "image", [], "any", false, false, false, 27), "html", null, true);
             echo "\">
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</a>
@@ -151,7 +131,7 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cat'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 32
         echo "
 \t\t\t<hr class=\"w-75 mx-auto mt-0 mb-3\">
 \t\t</div>
@@ -160,41 +140,41 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 \t\t<div class=\"d-none d-md-flex justify-content-around flex-wrap mt-3\">
 
 \t\t\t";
-        // line 46
+        // line 39
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["mp_plat"]) || array_key_exists("mp_plat", $context) ? $context["mp_plat"] : (function () { throw new RuntimeError('Variable "mp_plat" does not exist.', 46, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["mp_plat"]) || array_key_exists("mp_plat", $context) ? $context["mp_plat"] : (function () { throw new RuntimeError('Variable "mp_plat" does not exist.', 39, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["plats"]) {
-            // line 47
+            // line 40
             echo "
 \t\t\t\t<div class=\"card mb-3 border-0 shd text-white\">
 \t\t\t\t\t<h5 class=\"card-header d-flex justify-content-between\">
 \t\t\t\t\t\t<div>
 \t\t\t\t\t\t\t";
-            // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "libelle", [], "any", false, false, false, 51), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "libelle", [], "any", false, false, false, 44), "html", null, true);
             echo "
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"d-flex\">
 \t\t\t\t\t\t\t<p class=\"card-text\">
 \t\t\t\t\t\t\t\t";
-            // line 55
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "prix", [], "any", false, false, false, 55), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "prix", [], "any", false, false, false, 48), "html", null, true);
             echo "€
 \t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</h5>
 \t\t\t\t\t<div class=\"imgof\">
 \t\t\t\t\t\t<img src=\"";
-            // line 60
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(((isset($context["image_dir"]) || array_key_exists("image_dir", $context) ? $context["image_dir"] : (function () { throw new RuntimeError('Variable "image_dir" does not exist.', 60, $this->source); })()) . twig_get_attribute($this->env, $this->source, $context["plats"], "image", [], "any", false, false, false, 60))), "html", null, true);
+            // line 53
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(((isset($context["image_dir"]) || array_key_exists("image_dir", $context) ? $context["image_dir"] : (function () { throw new RuntimeError('Variable "image_dir" does not exist.', 53, $this->source); })()) . twig_get_attribute($this->env, $this->source, $context["plats"], "image", [], "any", false, false, false, 53))), "html", null, true);
             echo "\" class=\"card-img-bottom\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "image", [], "any", false, false, false, 60), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "image", [], "any", false, false, false, 53), "html", null, true);
             echo "\">
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"d-flex align-items-center\">
 \t\t\t\t\t\t<a href=\"";
-            // line 63
-            echo twig_escape_filter($this->env, ("/panier/add/" . twig_get_attribute($this->env, $this->source, $context["plats"], "id", [], "any", false, false, false, 63)), "html", null, true);
+            // line 56
+            echo twig_escape_filter($this->env, ("/panier/add/" . twig_get_attribute($this->env, $this->source, $context["plats"], "id", [], "any", false, false, false, 56)), "html", null, true);
             echo "\">
 \t\t\t\t\t\t\t<button type=\"button\" class=\"btn-light btn-sm text-black mb-3 mt-3\">
 \t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-cart-plus\" viewbox=\"0 0 16 16\">
@@ -211,14 +191,14 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['plats'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 75
+        // line 68
         echo "
 
 \t\t\t<hr class=\"w-75 mx-auto mt-0 mb-1\">
 \t\t</div>
 
 \t\t";
-        // line 167
+        // line 160
         echo "\t</main>
 
 ";
@@ -242,7 +222,7 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 
     public function getDebugInfo()
     {
-        return array (  222 => 167,  215 => 75,  197 => 63,  189 => 60,  181 => 55,  174 => 51,  168 => 47,  164 => 46,  155 => 39,  142 => 34,  137 => 32,  133 => 31,  130 => 30,  126 => 29,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  202 => 160,  195 => 68,  177 => 56,  169 => 53,  161 => 48,  154 => 44,  148 => 40,  144 => 39,  135 => 32,  122 => 27,  117 => 25,  113 => 24,  110 => 23,  106 => 22,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -253,13 +233,6 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 {% endblock %}
 
 {% block body %}
-
-\t{% for message in app.flashes('success') %}
-\t\t<div class=\"alert alert-success text-center\">
-\t\t\t{{ message }}
-\t\t</div>
-\t{% endfor %}
-
 \t<main class=\"mt-4\">
 
 \t\t<div class=\"mx-3 mt-5 mb-4 p-3 rounded mnb\">
