@@ -766,3 +766,8 @@ faa133,127.0.0.1,GET,https://localhost:8000/plat,1688479840,,200
 3a6d2e,127.0.0.1,GET,https://localhost:8000/panier,1688479842,,200
 b903e2,127.0.0.1,GET,https://localhost:8000/commande,1688479850,,200
 8bbf38,127.0.0.1,GET,https://localhost:8000/,1688480062,,200
+8e8754,127.0.0.1,GET,https://localhost:8000/,1688481398,,200
+c3bbe9,127.0.0.1,GET,https://localhost:8000/panier,1688481407,,200
+11d730,127.0.0.1,GET,https://localhost:8000/commande,1688481410,,200
+015e5b,127.0.0.1,GET,https://localhost:8000/,1688481411,,200
+3007e7,127.0.0.1,GET,https://localhost:8000/panier,1688481414,,200

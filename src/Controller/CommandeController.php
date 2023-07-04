@@ -29,6 +29,10 @@ class CommandeController extends AbstractController
             $qtt = "";
         }
 
+        //TODO: Vérifier si utilisateur connecté avant traitement et rediriger vers Inscription si non
+        
+        // TODO: Coder inscription en base de données d'une nouvelle commande et VIDER LE PANIER ?
+
         return $this->render('commande/index.html.twig', [
             'controller_name' => 'CommandeController',
             'panier' => $panier,
