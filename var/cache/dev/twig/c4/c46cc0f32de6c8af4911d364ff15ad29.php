@@ -87,6 +87,25 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 
         // line 7
         echo "
+\t";
+        // line 8
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 8));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 9
+            echo "\t\t<div class=\"alert alert-success text-center\">
+\t\t\t";
+            // line 10
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+\t\t</div>
+\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 13
+        echo "
 \t<main class=\"mt-4\">
 
 \t\t<div class=\"mx-3 mt-5 mb-4 p-3 rounded mnb\">
@@ -103,26 +122,26 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 \t\t<div class=\"justify-content-around row d-none d-md-flex\">
 
 \t\t\t";
-        // line 23
+        // line 29
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["topsix"]) || array_key_exists("topsix", $context) ? $context["topsix"] : (function () { throw new RuntimeError('Variable "topsix" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["topsix"]) || array_key_exists("topsix", $context) ? $context["topsix"] : (function () { throw new RuntimeError('Variable "topsix" does not exist.', 29, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["cat"]) {
-            // line 24
+            // line 30
             echo "\t\t\t\t<div class=\"card mb-3 mx-3 border-0 p-0 shd text-white col-3\">
 \t\t\t\t\t<a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_platwithcat", ["categorie_id" => twig_get_attribute($this->env, $this->source, $context["cat"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_platwithcat", ["categorie_id" => twig_get_attribute($this->env, $this->source, $context["cat"], "id", [], "any", false, false, false, 31)]), "html", null, true);
             echo "\">
 \t\t\t\t\t\t<h5 class=\"card-header\">";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "libelle", [], "any", false, false, false, 26), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "libelle", [], "any", false, false, false, 32), "html", null, true);
             echo "</h5>
 \t\t\t\t\t\t<div class=\"imgof\">
 \t\t\t\t\t\t\t<img src=\"";
-            // line 28
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(((isset($context["image_dir"]) || array_key_exists("image_dir", $context) ? $context["image_dir"] : (function () { throw new RuntimeError('Variable "image_dir" does not exist.', 28, $this->source); })()) . twig_get_attribute($this->env, $this->source, $context["cat"], "image", [], "any", false, false, false, 28))), "html", null, true);
+            // line 34
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(((isset($context["image_dir"]) || array_key_exists("image_dir", $context) ? $context["image_dir"] : (function () { throw new RuntimeError('Variable "image_dir" does not exist.', 34, $this->source); })()) . twig_get_attribute($this->env, $this->source, $context["cat"], "image", [], "any", false, false, false, 34))), "html", null, true);
             echo "\" class=\"card-img-bottom\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "image", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "image", [], "any", false, false, false, 34), "html", null, true);
             echo "\">
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</a>
@@ -132,7 +151,7 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cat'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 39
         echo "
 \t\t\t<hr class=\"w-75 mx-auto mt-0 mb-3\">
 \t\t</div>
@@ -141,41 +160,41 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 \t\t<div class=\"d-none d-md-flex justify-content-around flex-wrap mt-3\">
 
 \t\t\t";
-        // line 40
+        // line 46
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["mp_plat"]) || array_key_exists("mp_plat", $context) ? $context["mp_plat"] : (function () { throw new RuntimeError('Variable "mp_plat" does not exist.', 40, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["mp_plat"]) || array_key_exists("mp_plat", $context) ? $context["mp_plat"] : (function () { throw new RuntimeError('Variable "mp_plat" does not exist.', 46, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["plats"]) {
-            // line 41
+            // line 47
             echo "
 \t\t\t\t<div class=\"card mb-3 border-0 shd text-white\">
 \t\t\t\t\t<h5 class=\"card-header d-flex justify-content-between\">
 \t\t\t\t\t\t<div>
 \t\t\t\t\t\t\t";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "libelle", [], "any", false, false, false, 45), "html", null, true);
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "libelle", [], "any", false, false, false, 51), "html", null, true);
             echo "
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"d-flex\">
 \t\t\t\t\t\t\t<p class=\"card-text\">
 \t\t\t\t\t\t\t\t";
-            // line 49
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "prix", [], "any", false, false, false, 49), "html", null, true);
+            // line 55
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "prix", [], "any", false, false, false, 55), "html", null, true);
             echo "€
 \t\t\t\t\t\t\t</p>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</h5>
 \t\t\t\t\t<div class=\"imgof\">
 \t\t\t\t\t\t<img src=\"";
-            // line 54
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(((isset($context["image_dir"]) || array_key_exists("image_dir", $context) ? $context["image_dir"] : (function () { throw new RuntimeError('Variable "image_dir" does not exist.', 54, $this->source); })()) . twig_get_attribute($this->env, $this->source, $context["plats"], "image", [], "any", false, false, false, 54))), "html", null, true);
+            // line 60
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(((isset($context["image_dir"]) || array_key_exists("image_dir", $context) ? $context["image_dir"] : (function () { throw new RuntimeError('Variable "image_dir" does not exist.', 60, $this->source); })()) . twig_get_attribute($this->env, $this->source, $context["plats"], "image", [], "any", false, false, false, 60))), "html", null, true);
             echo "\" class=\"card-img-bottom\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "image", [], "any", false, false, false, 54), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["plats"], "image", [], "any", false, false, false, 60), "html", null, true);
             echo "\">
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"d-flex align-items-center\">
 \t\t\t\t\t\t<a href=\"";
-            // line 57
-            echo twig_escape_filter($this->env, ("/panier/add/" . twig_get_attribute($this->env, $this->source, $context["plats"], "id", [], "any", false, false, false, 57)), "html", null, true);
+            // line 63
+            echo twig_escape_filter($this->env, ("/panier/add/" . twig_get_attribute($this->env, $this->source, $context["plats"], "id", [], "any", false, false, false, 63)), "html", null, true);
             echo "\">
 \t\t\t\t\t\t\t<button type=\"button\" class=\"btn-light btn-sm text-black mb-3 mt-3\">
 \t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-cart-plus\" viewbox=\"0 0 16 16\">
@@ -192,14 +211,14 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['plats'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 69
+        // line 75
         echo "
 
 \t\t\t<hr class=\"w-75 mx-auto mt-0 mb-1\">
 \t\t</div>
 
 \t\t";
-        // line 161
+        // line 167
         echo "\t</main>
 
 ";
@@ -223,7 +242,7 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 
     public function getDebugInfo()
     {
-        return array (  203 => 161,  196 => 69,  178 => 57,  170 => 54,  162 => 49,  155 => 45,  149 => 41,  145 => 40,  136 => 33,  123 => 28,  118 => 26,  114 => 25,  111 => 24,  107 => 23,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  222 => 167,  215 => 75,  197 => 63,  189 => 60,  181 => 55,  174 => 51,  168 => 47,  164 => 46,  155 => 39,  142 => 34,  137 => 32,  133 => 31,  130 => 30,  126 => 29,  108 => 13,  99 => 10,  96 => 9,  92 => 8,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -234,6 +253,12 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 {% endblock %}
 
 {% block body %}
+
+\t{% for message in app.flashes('success') %}
+\t\t<div class=\"alert alert-success text-center\">
+\t\t\t{{ message }}
+\t\t</div>
+\t{% endfor %}
 
 \t<main class=\"mt-4\">
 
@@ -284,7 +309,7 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 \t\t\t\t\t\t<img src=\"{{asset(image_dir ~ plats.image)}}\" class=\"card-img-bottom\" alt=\"{{plats.image}}\">
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"d-flex align-items-center\">
-\t\t\t\t\t\t<a href=\"{{ '/panier/add/' ~  plats.id }}\">
+\t\t\t\t\t\t<a href=\"{{ '/panier/add/' ~ plats.id }}\">
 \t\t\t\t\t\t\t<button type=\"button\" class=\"btn-light btn-sm text-black mb-3 mt-3\">
 \t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-cart-plus\" viewbox=\"0 0 16 16\">
 \t\t\t\t\t\t\t\t\t<path d=\"M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z\"/>
@@ -302,92 +327,92 @@ class __TwigTemplate_32270220efeca2bf45014d03374d579e extends Template
 \t\t</div>
 
 \t\t{# 
-\t\t
-\t\t        <h3 class=\"d-flex d-md-none justify-content-center\">Tout nos plats</h3>
-\t\t        <div class=\"d-flex d-md-none justify-content-around flex-wrap mt-3\">
-\t\t
-\t\t            <?php foreach (\$tab3 as \$plat_all) : ?>
-\t\t
-\t\t                <div class=\"card mb-3 border-0 shd text-white\">
-\t\t                    <h5 class=\"card-header\"><?= \$plat_all->libelle ?></h5>
-\t\t                    <div class=\"imgof\">
-\t\t                        <img src=\"asset/img/food/<?= \$plat_all->image ?>\" class=\"card-img-bottom\" alt=\"<?= \$plat_all->image ?>\">
-\t\t                    </div>
-\t\t                    <div class=\"d-flex justify-content-center my-2\">
-\t\t                        <p class=\"card-text\">
-\t\t                            <?= \$plat_all->prix ?>€
-\t\t                        </p>
-\t\t                    </div>
-\t\t                    <div class=\"d-flex align-items-center\">
-\t\t                        <button type=\"button\" class=\"btn-light btn-sm text-black mb-3\">
-\t\t                            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-cart-plus\" viewBox=\"0 0 16 16\">
-\t\t                                <path d=\"M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z\" />
-\t\t                                <path d=\"M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\" />
-\t\t                            </svg>
-\t\t                        </button>
-\t\t                    </div>
-\t\t                </div>
-\t\t
-\t\t            <?php endforeach; ?>
-\t\t
-\t\t        </div>
-\t\t
-\t\t    <?php else :
-\t\t        \$search = \$_GET['search'];
-\t\t        include('dao.php');
-\t\t        \$result_cat = search_cat(\$search);
-\t\t        \$result_plat = search_plat(\$search);
-\t\t    ?>
-\t\t
-\t\t        <h2 class=\"d-none d-md-flex justify-content-center mt-2\">Résultats catégorie</h2>
-\t\t        <hr class=\"w-75 mx-auto mt-0 mb-3\">
-\t\t        <div class=\"justify-content-around d-none d-md-flex\">
-\t\t            <?php if (empty(\$result_cat)) : ?>
-\t\t                <h5>Aucun résultat dans les catégories !</h5>
-\t\t            <?php else : ?>
-\t\t                <?php foreach (\$result_cat as \$search_cat) : ?>
-\t\t                    <div class=\"card mb-3 mx-3 border-0 p-0 shd text-white col-3\">
-\t\t                        <a href=\"/?page=detail&c_id=<?= \$search_cat->id_categorie ?>\">
-\t\t                            <h5 class=\"card-header\"><?= \$search_cat->libelle ?></h5>
-\t\t                            <div class=\"imgof\">
-\t\t                                <img src=\"asset/img/category/<?= \$search_cat->image ?>\" class=\"card-img-bottom\" alt=\"<?= \$search_cat->image ?>\">
-\t\t                            </div>
-\t\t                        </a>
-\t\t                    </div>
-\t\t                <?php endforeach; ?>
-\t\t            <?php endif ?>
-\t\t        </div>
-\t\t
-\t\t        <h2 class=\"d-none d-md-flex justify-content-center mt-2\">Résultats plats</h2>
-\t\t        <hr class=\"w-75 mx-auto mt-0 mb-3\">
-\t\t        <div class=\"d-none d-md-flex justify-content-around flex-wrap mt-3\">
-\t\t            <?php if (empty(\$result_plat)) : ?>
-\t\t                <h5>Aucun résultat dans les plats !</h5>
-\t\t            <?php else : ?>
-\t\t                <?php foreach (\$result_plat as \$search_plat) : ?>
-\t\t                    <div class=\"card mb-3 border-0 shd text-white\">
-\t\t                        <h5 class=\"card-header d-flex justify-content-between\">
-\t\t                            <div>
-\t\t                                <?= \$search_plat->libelle ?>
-\t\t                            </div>
-\t\t                            <div class=\"d-flex\">
-\t\t                                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-cart-plus mx-3\" viewBox=\"0 0 16 16\">
-\t\t                                    <path d=\"M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z\" />
-\t\t                                    <path d=\"M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\" />
-\t\t                                </svg>
-\t\t                                <p class=\"card-text\">
-\t\t                                    <?= \$search_plat->prix ?>€
-\t\t                                </p>
-\t\t                            </div>
-\t\t                        </h5>
-\t\t                        <div class=\"imgof\">
-\t\t                            <img src=\"asset/img/food/<?= \$search_plat->image ?>\" class=\"card-img-bottom\" alt=\"<?= \$search_plat->image ?>\">
-\t\t                        </div>
-\t\t                    </div>
-\t\t                <?php endforeach; ?>
-\t\t            <?php endif ?>
-\t\t        </div>
-\t\t    <?php endif ?>#}
+\t\t\t\t
+\t\t\t\t        <h3 class=\"d-flex d-md-none justify-content-center\">Tout nos plats</h3>
+\t\t\t\t        <div class=\"d-flex d-md-none justify-content-around flex-wrap mt-3\">
+\t\t\t\t
+\t\t\t\t            <?php foreach (\$tab3 as \$plat_all) : ?>
+\t\t\t\t
+\t\t\t\t                <div class=\"card mb-3 border-0 shd text-white\">
+\t\t\t\t                    <h5 class=\"card-header\"><?= \$plat_all->libelle ?></h5>
+\t\t\t\t                    <div class=\"imgof\">
+\t\t\t\t                        <img src=\"asset/img/food/<?= \$plat_all->image ?>\" class=\"card-img-bottom\" alt=\"<?= \$plat_all->image ?>\">
+\t\t\t\t                    </div>
+\t\t\t\t                    <div class=\"d-flex justify-content-center my-2\">
+\t\t\t\t                        <p class=\"card-text\">
+\t\t\t\t                            <?= \$plat_all->prix ?>€
+\t\t\t\t                        </p>
+\t\t\t\t                    </div>
+\t\t\t\t                    <div class=\"d-flex align-items-center\">
+\t\t\t\t                        <button type=\"button\" class=\"btn-light btn-sm text-black mb-3\">
+\t\t\t\t                            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-cart-plus\" viewBox=\"0 0 16 16\">
+\t\t\t\t                                <path d=\"M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z\" />
+\t\t\t\t                                <path d=\"M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\" />
+\t\t\t\t                            </svg>
+\t\t\t\t                        </button>
+\t\t\t\t                    </div>
+\t\t\t\t                </div>
+\t\t\t\t
+\t\t\t\t            <?php endforeach; ?>
+\t\t\t\t
+\t\t\t\t        </div>
+\t\t\t\t
+\t\t\t\t    <?php else :
+\t\t\t\t        \$search = \$_GET['search'];
+\t\t\t\t        include('dao.php');
+\t\t\t\t        \$result_cat = search_cat(\$search);
+\t\t\t\t        \$result_plat = search_plat(\$search);
+\t\t\t\t    ?>
+\t\t\t\t
+\t\t\t\t        <h2 class=\"d-none d-md-flex justify-content-center mt-2\">Résultats catégorie</h2>
+\t\t\t\t        <hr class=\"w-75 mx-auto mt-0 mb-3\">
+\t\t\t\t        <div class=\"justify-content-around d-none d-md-flex\">
+\t\t\t\t            <?php if (empty(\$result_cat)) : ?>
+\t\t\t\t                <h5>Aucun résultat dans les catégories !</h5>
+\t\t\t\t            <?php else : ?>
+\t\t\t\t                <?php foreach (\$result_cat as \$search_cat) : ?>
+\t\t\t\t                    <div class=\"card mb-3 mx-3 border-0 p-0 shd text-white col-3\">
+\t\t\t\t                        <a href=\"/?page=detail&c_id=<?= \$search_cat->id_categorie ?>\">
+\t\t\t\t                            <h5 class=\"card-header\"><?= \$search_cat->libelle ?></h5>
+\t\t\t\t                            <div class=\"imgof\">
+\t\t\t\t                                <img src=\"asset/img/category/<?= \$search_cat->image ?>\" class=\"card-img-bottom\" alt=\"<?= \$search_cat->image ?>\">
+\t\t\t\t                            </div>
+\t\t\t\t                        </a>
+\t\t\t\t                    </div>
+\t\t\t\t                <?php endforeach; ?>
+\t\t\t\t            <?php endif ?>
+\t\t\t\t        </div>
+\t\t\t\t
+\t\t\t\t        <h2 class=\"d-none d-md-flex justify-content-center mt-2\">Résultats plats</h2>
+\t\t\t\t        <hr class=\"w-75 mx-auto mt-0 mb-3\">
+\t\t\t\t        <div class=\"d-none d-md-flex justify-content-around flex-wrap mt-3\">
+\t\t\t\t            <?php if (empty(\$result_plat)) : ?>
+\t\t\t\t                <h5>Aucun résultat dans les plats !</h5>
+\t\t\t\t            <?php else : ?>
+\t\t\t\t                <?php foreach (\$result_plat as \$search_plat) : ?>
+\t\t\t\t                    <div class=\"card mb-3 border-0 shd text-white\">
+\t\t\t\t                        <h5 class=\"card-header d-flex justify-content-between\">
+\t\t\t\t                            <div>
+\t\t\t\t                                <?= \$search_plat->libelle ?>
+\t\t\t\t                            </div>
+\t\t\t\t                            <div class=\"d-flex\">
+\t\t\t\t                                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-cart-plus mx-3\" viewBox=\"0 0 16 16\">
+\t\t\t\t                                    <path d=\"M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z\" />
+\t\t\t\t                                    <path d=\"M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\" />
+\t\t\t\t                                </svg>
+\t\t\t\t                                <p class=\"card-text\">
+\t\t\t\t                                    <?= \$search_plat->prix ?>€
+\t\t\t\t                                </p>
+\t\t\t\t                            </div>
+\t\t\t\t                        </h5>
+\t\t\t\t                        <div class=\"imgof\">
+\t\t\t\t                            <img src=\"asset/img/food/<?= \$search_plat->image ?>\" class=\"card-img-bottom\" alt=\"<?= \$search_plat->image ?>\">
+\t\t\t\t                        </div>
+\t\t\t\t                    </div>
+\t\t\t\t                <?php endforeach; ?>
+\t\t\t\t            <?php endif ?>
+\t\t\t\t        </div>
+\t\t\t\t    <?php endif ?>#}
 \t</main>
 
 {% endblock %}

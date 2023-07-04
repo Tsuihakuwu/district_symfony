@@ -29,6 +29,7 @@ return [
     'app_panier_delete' => [['id_plat'], ['_controller' => 'App\\Controller\\PanierController::delete_plat'], [], [['variable', '/', '[^/]++', 'id_plat', true], ['text', '/panier/delete']], [], [], []],
     'app_panier_vider' => [[], ['_controller' => 'App\\Controller\\PanierController::vider_panier'], [], [['text', '/panier/vider']], [], [], []],
     'app_profil' => [[], ['_controller' => 'App\\Controller\\ProfilController::index'], [], [['text', '/profil']], [], [], []],
+    'app_profile_update' => [[], ['_controller' => 'App\\Controller\\ProfilController::profil_update'], [], [['text', '/profil/update']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_verify_email' => [[], ['_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], [], [['text', '/verify/email']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],

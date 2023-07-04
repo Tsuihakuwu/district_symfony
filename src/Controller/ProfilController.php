@@ -34,6 +34,23 @@ class ProfilController extends AbstractController
             'total_qtt' => $qtt,
         ]);
     }
+
+    #[Route('/profil/update', name: 'app_profile_update')]
+    public function profil_update(): Response
+    {
+        $panier = $this->panier->getPanier();
+        $qtt = $this->panier->getTotalQuantity();
+        $identifiant = $this->getUser()->getUserIdentifier();
+        if($identifiant){
+            $info = $this->utilisateurRepository->findOneBy(["email" =>$identifiant]);
+        }
+
+        return $this->render('profil/index.html.twig', [
+            'informations' => $info,
+            'panier' => $panier,
+            'total_qtt' => $qtt,
+        ]);
+    }
+
 }
 
-//TODO: MODIFIER REDIRECTION APRES INSCRIPTION OU CONNEXION VERS PAGE PROFIL

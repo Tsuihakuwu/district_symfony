@@ -71,7 +71,11 @@ class PanierController extends AbstractController
 
         $this->panier->ajouterPlat($plat,1);
 
-        return $this->redirectToRoute('app_panier');
+        $this->addFlash('success', 'Article ajouté au panier !');
+
+        $route = $request->headers->get('referer');
+
+        return $this->redirect($route);
     }
     
     #[Route('/panier/delete/{id_plat}', name: 'app_panier_delete')]
