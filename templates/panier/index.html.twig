@@ -40,13 +40,14 @@
 			{% else %}
 				<div class="text-center">Le panier est vide !</div>
 			{% endif %}
-			<hr class="w-100 mx-auto mt-3 mb-3 d-flex">
+			<hr class="w-100 mx-auto mt-4 mb-3 d-flex">
 			<div class="text-center">Total de votre commande:
 				{{ totalprix }}€</div>
+			<hr class="w-100 mx-auto mt-3 mb-3 d-flex">
 			{% if panier %}
-				<div class="text-center mt-3">
-					{# <a href="{{ path('commande_panier') }}" class="btn btn-primary">Commander</a> #}
-					<a href="{{ path('app_panier_vider') }}" class="btn btn-danger me-2">Vider le panier</a>
+				<div class="text-center">
+					<a href="{{ path('app_commande') }}" class="btn btn-primary mx-3">Commander</a>
+					<a href="{{ path('app_panier_vider') }}" class="btn btn-danger mx-3">Vider le panier</a>
 				</div>
 			{% endif %}
 		</div>

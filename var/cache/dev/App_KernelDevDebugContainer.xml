@@ -360,7 +360,6 @@
     <service id="App\Controller\CatalogueController" class="App\Controller\CatalogueController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
-      <argument type="service" id="App\Service\PanierService"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="App\Repository\CategorieRepository"/>
       <argument type="service" id="App\Repository\PlatRepository"/>
@@ -375,6 +374,7 @@
     <service id="App\Controller\CommandeController" class="App\Controller\CommandeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Service\PanierService"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.CshazM0.App\Controller\CommandeController"/>
       </call>

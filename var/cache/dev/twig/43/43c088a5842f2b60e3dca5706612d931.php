@@ -155,26 +155,30 @@ class __TwigTemplate_7a87158dfedbb5df88c133d38bf02efb extends Template
 \t\t\t";
         }
         // line 43
-        echo "\t\t\t<hr class=\"w-100 mx-auto mt-3 mb-3 d-flex\">
+        echo "\t\t\t<hr class=\"w-100 mx-auto mt-4 mb-3 d-flex\">
 \t\t\t<div class=\"text-center\">Total de votre commande:
 \t\t\t\t";
         // line 45
         echo twig_escape_filter($this->env, (isset($context["totalprix"]) || array_key_exists("totalprix", $context) ? $context["totalprix"] : (function () { throw new RuntimeError('Variable "totalprix" does not exist.', 45, $this->source); })()), "html", null, true);
         echo "€</div>
+\t\t\t<hr class=\"w-100 mx-auto mt-3 mb-3 d-flex\">
 \t\t\t";
-        // line 46
-        if ((isset($context["panier"]) || array_key_exists("panier", $context) ? $context["panier"] : (function () { throw new RuntimeError('Variable "panier" does not exist.', 46, $this->source); })())) {
-            // line 47
-            echo "\t\t\t\t<div class=\"text-center mt-3\">
-\t\t\t\t\t";
+        // line 47
+        if ((isset($context["panier"]) || array_key_exists("panier", $context) ? $context["panier"] : (function () { throw new RuntimeError('Variable "panier" does not exist.', 47, $this->source); })())) {
+            // line 48
+            echo "\t\t\t\t<div class=\"text-center\">
+\t\t\t\t\t<a href=\"";
             // line 49
-            echo "\t\t\t\t\t<a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commande");
+            echo "\" class=\"btn btn-primary mx-3\">Commander</a>
+\t\t\t\t\t<a href=\"";
+            // line 50
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_vider");
-            echo "\" class=\"btn btn-danger me-2\">Vider le panier</a>
+            echo "\" class=\"btn btn-danger mx-3\">Vider le panier</a>
 \t\t\t\t</div>
 \t\t\t";
         }
-        // line 52
+        // line 53
         echo "\t\t</div>
 \t</main>
 ";
@@ -198,7 +202,7 @@ class __TwigTemplate_7a87158dfedbb5df88c133d38bf02efb extends Template
 
     public function getDebugInfo()
     {
-        return array (  178 => 52,  171 => 49,  168 => 47,  166 => 46,  162 => 45,  158 => 43,  154 => 41,  151 => 40,  133 => 28,  127 => 25,  121 => 22,  116 => 20,  108 => 17,  102 => 13,  97 => 12,  95 => 11,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  182 => 53,  176 => 50,  172 => 49,  169 => 48,  167 => 47,  162 => 45,  158 => 43,  154 => 41,  151 => 40,  133 => 28,  127 => 25,  121 => 22,  116 => 20,  108 => 17,  102 => 13,  97 => 12,  95 => 11,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -245,17 +249,19 @@ class __TwigTemplate_7a87158dfedbb5df88c133d38bf02efb extends Template
 \t\t\t{% else %}
 \t\t\t\t<div class=\"text-center\">Le panier est vide !</div>
 \t\t\t{% endif %}
-\t\t\t<hr class=\"w-100 mx-auto mt-3 mb-3 d-flex\">
+\t\t\t<hr class=\"w-100 mx-auto mt-4 mb-3 d-flex\">
 \t\t\t<div class=\"text-center\">Total de votre commande:
 \t\t\t\t{{ totalprix }}€</div>
+\t\t\t<hr class=\"w-100 mx-auto mt-3 mb-3 d-flex\">
 \t\t\t{% if panier %}
-\t\t\t\t<div class=\"text-center mt-3\">
-\t\t\t\t\t{# <a href=\"{{ path('commande_panier') }}\" class=\"btn btn-primary\">Commander</a> #}
-\t\t\t\t\t<a href=\"{{ path('app_panier_vider') }}\" class=\"btn btn-danger me-2\">Vider le panier</a>
+\t\t\t\t<div class=\"text-center\">
+\t\t\t\t\t<a href=\"{{ path('app_commande') }}\" class=\"btn btn-primary mx-3\">Commander</a>
+\t\t\t\t\t<a href=\"{{ path('app_panier_vider') }}\" class=\"btn btn-danger mx-3\">Vider le panier</a>
 \t\t\t\t</div>
 \t\t\t{% endif %}
 \t\t</div>
 \t</main>
-{% endblock %}", "panier/index.html.twig", "/home/stagiaire/Bureau/the_district_symfony/templates/panier/index.html.twig");
+{% endblock %}
+", "panier/index.html.twig", "/home/stagiaire/Bureau/the_district_symfony/templates/panier/index.html.twig");
     }
 }

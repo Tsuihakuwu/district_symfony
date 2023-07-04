@@ -1,7 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Votre commande{% endblock %}
+{% block title %}Votre commande
+{% endblock %}
 
 {% block body %}
+
+	<main>
+		<h1 class="d-flex justify-content-center mt-2">Merci de votre commande !</h1>
+		<hr class="w-75 mx-auto mt-0 mb-3">
+		<div class="mt-3 mb-5 p-3 justify-content-around rounded mnb row">
+			<h3 class="d-flex justify-content-center mt-3">Récapitulatif de votre commande :</h3>
+			{% for plat in panier %}
+				<div class="col-md-4 mt-3">
+					<div class="card border-0 shd text-white">
+						<div class="row g-0">
+							<div class="col-md-7 imgof">
+								<img src="{{ image_dir ~ plat['Plat'].image }}" class="img-fluid rounded-start" alt="{{ plat['Plat'].image }}">
+							</div>
+							<div class="card-body col-md-5 d-flex flex-column justify-content-center">
+								<h5 class="card-title text-center">{{ plat['Plat'].libelle }}</h5>
+								<hr class="w-50 mx-auto mt-3 mb-3">
+								<p class="card-text text-center">{{ plat['Plat'].prix }}€</p>
+								<hr class="w-50 mx-auto mt-0 mb-3">
+								<p class="card-text text-center">Quantité:
+									{{ plat.quantite }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+            <hr class="w-100 mx-auto mt-4 mb-3 d-flex">
+			<div class="text-center">Total de votre commande:
+				{{ totalprix }}€</div>
+			<hr class="w-100 mx-auto mt-3 mb-3 d-flex">
+			<div class="text-center">
+				<a href="{{ path('app_accueil') }}" class="btn btn-light mt-4">Retour accueil</a>
+			</div>
+		</div>
+	</main>
 
 {% endblock %}

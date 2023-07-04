@@ -28,7 +28,7 @@ class CatalogueController extends AbstractController
     private $panier;
 
     //Constructeur
-    public function __construct(PanierService $panier, EntityManagerInterface $entityManager, CategorieRepository $categorieRepository, PlatRepository $platRepository, DetailRepository $detailRepository, CommandeRepository $commandeRepository, UtilisateurRepository $utilisateurRepository, PanierService $panierService)
+    public function __construct(EntityManagerInterface $entityManager, CategorieRepository $categorieRepository, PlatRepository $platRepository, DetailRepository $detailRepository, CommandeRepository $commandeRepository, UtilisateurRepository $utilisateurRepository, PanierService $panierService)
     {
         $this->panier = $panierService;
         $this->entityManager = $entityManager;
