@@ -29,7 +29,17 @@ class CommandeController extends AbstractController
             $qtt = "";
         }
 
-        //TODO: Vérifier si utilisateur connecté avant traitement et rediriger vers Inscription si non
+        // FIXME: Recupérer proprement un objet user pour traitement
+
+        $this->denyAccessUnlessGranted('ROLE_CLIENT');
+
+        $user = $this->getUser();
+
+        $user->getNom();
+
+        // $userdata = [;];
+
+        dd($user);
         
         // TODO: Coder inscription en base de données d'une nouvelle commande et VIDER LE PANIER ?
 
@@ -37,6 +47,7 @@ class CommandeController extends AbstractController
             'controller_name' => 'CommandeController',
             'panier' => $panier,
             'totalprix' => $total,
+            'userdata' => $userdata,
         ]);
-    }
+        }
 }

@@ -43,7 +43,17 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            // TODO: Modifier formulaire et récupération des données ici
+            $formData = $form->getData();
+
+            $user->setNom($user->getNom());
+            $user->setPrenom($user->getPrenom());
+            $user->setTelephone($user->getTelephone());
+            $user->setAdresse($user->getAdresse());
+            $user->setCp($user->getCp());
+            $user->setVille($user->getVille());
+
+            //`ROLE_USER` de base donné aux utilisateurs :
+            $user->setRoles(['ROLE_USER']);
 
             // encode the plain password
             $user->setPassword(
@@ -65,6 +75,8 @@ class RegistrationController extends AbstractController
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
             // do anything else you need here, like send an email
+
+
 
             $this->addFlash('success', 'Votre compte a bien été créé. Un mail d\'activation de votre compte a été envoyé à votre adresse !');
 

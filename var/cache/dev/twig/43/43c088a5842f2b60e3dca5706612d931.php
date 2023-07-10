@@ -166,19 +166,44 @@ class __TwigTemplate_7a87158dfedbb5df88c133d38bf02efb extends Template
         // line 47
         if ((isset($context["panier"]) || array_key_exists("panier", $context) ? $context["panier"] : (function () { throw new RuntimeError('Variable "panier" does not exist.', 47, $this->source); })())) {
             // line 48
+            echo "\t\t\t\t";
+            if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "user", [], "any", false, false, false, 48)) {
+                // line 49
+                echo "\t\t\t\t\t";
+                // line 50
+                echo "\t\t\t\t\t<div class=\"text-center mb-3\">
+\t\t\t\t\t\t<a href=\"";
+                // line 51
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commande");
+                echo "\" class=\"btn btn-primary mx-3\">Commander</a>
+\t\t\t\t\t\t</div>
+\t\t\t\t";
+            } else {
+                // line 54
+                echo "\t\t\t\t\t";
+                // line 55
+                echo "\t\t\t\t\t<div class=\"text-center\">
+\t\t\t\t\t<p>Afin de pouvoir passer commander <a class=\"nav-link text-primary\" href=\"";
+                // line 56
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+                echo "\">connectez-vous !</a></p>
+\t\t\t\t\t<p>Pas encore de compte ? <a class=\"nav-link text-primary\" href=\"";
+                // line 57
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+                echo "\">Je m'inscris !</a></p>\t\t\t\t\t\t\t
+\t\t\t\t\t</div>
+\t\t\t\t";
+            }
+            // line 60
             echo "\t\t\t\t<div class=\"text-center\">
 \t\t\t\t\t<a href=\"";
-            // line 49
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_commande");
-            echo "\" class=\"btn btn-primary mx-3\">Commander</a>
-\t\t\t\t\t<a href=\"";
-            // line 50
+            // line 61
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_vider");
             echo "\" class=\"btn btn-danger mx-3\">Vider le panier</a>
 \t\t\t\t</div>
 \t\t\t";
         }
-        // line 53
+        // line 64
         echo "\t\t</div>
 \t</main>
 ";
@@ -202,7 +227,7 @@ class __TwigTemplate_7a87158dfedbb5df88c133d38bf02efb extends Template
 
     public function getDebugInfo()
     {
-        return array (  182 => 53,  176 => 50,  172 => 49,  169 => 48,  167 => 47,  162 => 45,  158 => 43,  154 => 41,  151 => 40,  133 => 28,  127 => 25,  121 => 22,  116 => 20,  108 => 17,  102 => 13,  97 => 12,  95 => 11,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  207 => 64,  201 => 61,  198 => 60,  192 => 57,  188 => 56,  185 => 55,  183 => 54,  177 => 51,  174 => 50,  172 => 49,  169 => 48,  167 => 47,  162 => 45,  158 => 43,  154 => 41,  151 => 40,  133 => 28,  127 => 25,  121 => 22,  116 => 20,  108 => 17,  102 => 13,  97 => 12,  95 => 11,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -254,8 +279,19 @@ class __TwigTemplate_7a87158dfedbb5df88c133d38bf02efb extends Template
 \t\t\t\t{{ totalprix }}€</div>
 \t\t\t<hr class=\"w-100 mx-auto mt-3 mb-3 d-flex\">
 \t\t\t{% if panier %}
+\t\t\t\t{% if app.user %}
+\t\t\t\t\t{# User is authenticated #}
+\t\t\t\t\t<div class=\"text-center mb-3\">
+\t\t\t\t\t\t<a href=\"{{ path('app_commande') }}\" class=\"btn btn-primary mx-3\">Commander</a>
+\t\t\t\t\t\t</div>
+\t\t\t\t{% else %}
+\t\t\t\t\t{# User is not authenticated #}
+\t\t\t\t\t<div class=\"text-center\">
+\t\t\t\t\t<p>Afin de pouvoir passer commander <a class=\"nav-link text-primary\" href=\"{{path('app_login')}}\">connectez-vous !</a></p>
+\t\t\t\t\t<p>Pas encore de compte ? <a class=\"nav-link text-primary\" href=\"{{path('app_login')}}\">Je m'inscris !</a></p>\t\t\t\t\t\t\t
+\t\t\t\t\t</div>
+\t\t\t\t{% endif %}
 \t\t\t\t<div class=\"text-center\">
-\t\t\t\t\t<a href=\"{{ path('app_commande') }}\" class=\"btn btn-primary mx-3\">Commander</a>
 \t\t\t\t\t<a href=\"{{ path('app_panier_vider') }}\" class=\"btn btn-danger mx-3\">Vider le panier</a>
 \t\t\t\t</div>
 \t\t\t{% endif %}

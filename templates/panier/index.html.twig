@@ -45,8 +45,19 @@
 				{{ totalprix }}€</div>
 			<hr class="w-100 mx-auto mt-3 mb-3 d-flex">
 			{% if panier %}
+				{% if app.user %}
+					{# User is authenticated #}
+					<div class="text-center mb-3">
+						<a href="{{ path('app_commande') }}" class="btn btn-primary mx-3">Commander</a>
+						</div>
+				{% else %}
+					{# User is not authenticated #}
+					<div class="text-center">
+					<p>Afin de pouvoir passer commander <a class="nav-link text-primary" href="{{path('app_login')}}">connectez-vous !</a></p>
+					<p>Pas encore de compte ? <a class="nav-link text-primary" href="{{path('app_login')}}">Je m'inscris !</a></p>							
+					</div>
+				{% endif %}
 				<div class="text-center">
-					<a href="{{ path('app_commande') }}" class="btn btn-primary mx-3">Commander</a>
 					<a href="{{ path('app_panier_vider') }}" class="btn btn-danger mx-3">Vider le panier</a>
 				</div>
 			{% endif %}
