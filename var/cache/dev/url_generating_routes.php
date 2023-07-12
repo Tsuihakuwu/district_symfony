@@ -30,6 +30,7 @@ return [
     'app_panier_vider' => [[], ['_controller' => 'App\\Controller\\PanierController::vider_panier'], [], [['text', '/panier/vider']], [], [], []],
     'app_profil' => [[], ['_controller' => 'App\\Controller\\ProfilController::index'], [], [['text', '/profil']], [], [], []],
     'app_profil_update' => [[], ['_controller' => 'App\\Controller\\ProfilController::profil_update'], [], [['text', '/profil/update']], [], [], []],
+    'app_historique' => [[], ['_controller' => 'App\\Controller\\ProfilController::historique'], [], [['text', '/profil/historique']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_verify_email' => [[], ['_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], [], [['text', '/verify/email']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],

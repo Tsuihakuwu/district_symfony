@@ -78,6 +78,32 @@ class UtilisateurRepository extends ServiceEntityRepository implements PasswordU
         ->getQuery();
 
     $query->execute();
+
+    }
+
+    public function getHistorique($user){
+
+    // SELECT commande.id, date_commande, commande.total, plat.libelle, COUNT(plat.libelle)
+    // FROM commande
+    // JOIN detail ON detail.commande_id = commande.id
+    // JOIN plat ON detail.plat_id = plat.id
+    // WHERE utilisateur_id = 18
+    // GROUP BY detail.id
+
+        $qb = $this->createQueryBuilder('u')
+            ->select('c.id', 'c.date_commande', 'c.total', 'p.libelle', 'COUNT(p.libelle) AS platCount')
+            ->join('u.commandes','c')
+            ->join('c.details', 'd')
+            ->join('d.plat', 'p')
+            ->where('u.id = :utilisateur')
+            ->setParameter('utilisateur', $user)
+            ->groupBy('d.id')
+            ->getQuery();
+        
+        $results = $qb->getResult();
+
+        return $results;
+
     }
 
 //    /**

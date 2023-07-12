@@ -152,10 +152,11 @@ class __TwigTemplate_cf2e241e3d6cf03042de85395229f720 extends Template
         // line 45
         echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["informations"]) || array_key_exists("informations", $context) ? $context["informations"] : (function () { throw new RuntimeError('Variable "informations" does not exist.', 45, $this->source); })()), "commandes", [], "any", false, false, false, 45)), "html", null, true);
         echo "\" class=\"form-control mb-3\" disabled>
-                        <a href=\"#\" class=\"text-primary\">Mon historique de commandes</a>
-                        ";
-        // line 48
-        echo "\t\t\t\t\t</div>
+                        <a href=\"";
+        // line 46
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_historique");
+        echo "\" class=\"text-primary\">Mon historique de commandes</a>
+\t\t\t\t\t</div>
                     <hr class=\"w-75 mx-auto mt-4 mb-3\">
 \t\t\t\t\t<div class=\"text-center mt-4\">
 \t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-light \">Enregistrer les modifications</button>
@@ -186,7 +187,7 @@ class __TwigTemplate_cf2e241e3d6cf03042de85395229f720 extends Template
 
     public function getDebugInfo()
     {
-        return array (  158 => 48,  153 => 45,  145 => 40,  138 => 36,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  102 => 15,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  157 => 46,  153 => 45,  145 => 40,  138 => 36,  131 => 32,  124 => 28,  117 => 24,  110 => 20,  102 => 15,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -236,8 +237,7 @@ class __TwigTemplate_cf2e241e3d6cf03042de85395229f720 extends Template
 \t\t\t\t\t<div class=\"form-group text-center\">
 \t\t\t\t\t\t<label for=\"commandes\">Nombre de commandes:</label>
 \t\t\t\t\t\t<input type=\"text\" id=\"commandes\" name=\"commandes\" value=\"{{ informations.commandes|length }}\" class=\"form-control mb-3\" disabled>
-                        <a href=\"#\" class=\"text-primary\">Mon historique de commandes</a>
-                        {# TODO: Historique de commandes #}
+                        <a href=\"{{ path('app_historique') }}\" class=\"text-primary\">Mon historique de commandes</a>
 \t\t\t\t\t</div>
                     <hr class=\"w-75 mx-auto mt-4 mb-3\">
 \t\t\t\t\t<div class=\"text-center mt-4\">

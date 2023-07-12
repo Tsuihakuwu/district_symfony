@@ -25,6 +25,7 @@ return [
         '/panier/vider' => [[['_route' => 'app_panier_vider', '_controller' => 'App\\Controller\\PanierController::vider_panier'], null, null, null, false, false, null]],
         '/profil' => [[['_route' => 'app_profil', '_controller' => 'App\\Controller\\ProfilController::index'], null, null, null, false, false, null]],
         '/profil/update' => [[['_route' => 'app_profil_update', '_controller' => 'App\\Controller\\ProfilController::profil_update'], null, null, null, false, false, null]],
+        '/profil/historique' => [[['_route' => 'app_historique', '_controller' => 'App\\Controller\\ProfilController::historique'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],

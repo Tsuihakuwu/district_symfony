@@ -44,7 +44,7 @@ class PanierService
             $panier[$idPlat]['quantite'] += $quantite;
         } else {
             $panier[$idPlat] = [
-                'Plat' => $plat,
+                'plat' => $plat,
                 'quantite' => $quantite,
             ];
         }
@@ -79,7 +79,7 @@ class PanierService
         $totalPrix = 0.0;
 
         foreach ($this->getpanier() as $item) {
-            $plat = $item['Plat'];
+            $plat = $item['plat'];
             $quantite = $item['quantite'];
             $prix = $plat->getPrix();
 

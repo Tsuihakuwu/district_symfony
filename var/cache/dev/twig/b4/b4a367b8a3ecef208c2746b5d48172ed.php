@@ -109,20 +109,20 @@ class __TwigTemplate_49c6cb55856af072d44c006a74fd2962 extends Template
 \t\t\t\t\t\t\t<div class=\"col-md-7 imgof\">
 \t\t\t\t\t\t\t\t<img src=\"";
             // line 20
-            echo twig_escape_filter($this->env, ((isset($context["image_dir"]) || array_key_exists("image_dir", $context) ? $context["image_dir"] : (function () { throw new RuntimeError('Variable "image_dir" does not exist.', 20, $this->source); })()) . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["plat"], "Plat", [], "array", false, false, false, 20), "image", [], "any", false, false, false, 20)), "html", null, true);
+            echo twig_escape_filter($this->env, ((isset($context["image_dir"]) || array_key_exists("image_dir", $context) ? $context["image_dir"] : (function () { throw new RuntimeError('Variable "image_dir" does not exist.', 20, $this->source); })()) . twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["plat"], "plat", [], "array", false, false, false, 20), "image", [], "any", false, false, false, 20)), "html", null, true);
             echo "\" class=\"img-fluid rounded-start\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["plat"], "Plat", [], "array", false, false, false, 20), "image", [], "any", false, false, false, 20), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["plat"], "plat", [], "array", false, false, false, 20), "image", [], "any", false, false, false, 20), "html", null, true);
             echo "\">
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"card-body col-md-5 d-flex flex-column justify-content-center\">
 \t\t\t\t\t\t\t\t<h5 class=\"card-title text-center\">";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["plat"], "Plat", [], "array", false, false, false, 23), "libelle", [], "any", false, false, false, 23), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["plat"], "plat", [], "array", false, false, false, 23), "libelle", [], "any", false, false, false, 23), "html", null, true);
             echo "</h5>
 \t\t\t\t\t\t\t\t<hr class=\"w-50 mx-auto mt-3 mb-3\">
 \t\t\t\t\t\t\t\t<p class=\"card-text text-center\">";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["plat"], "Plat", [], "array", false, false, false, 25), "prix", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["plat"], "plat", [], "array", false, false, false, 25), "prix", [], "any", false, false, false, 25), "html", null, true);
             echo "€</p>
 \t\t\t\t\t\t\t\t<hr class=\"w-50 mx-auto mt-0 mb-3\">
 \t\t\t\t\t\t\t\t<p class=\"card-text text-center\">Quantité:
@@ -214,12 +214,12 @@ class __TwigTemplate_49c6cb55856af072d44c006a74fd2962 extends Template
 \t\t\t\t\t<div class=\"card border-0 shd text-white\">
 \t\t\t\t\t\t<div class=\"row g-0\">
 \t\t\t\t\t\t\t<div class=\"col-md-7 imgof\">
-\t\t\t\t\t\t\t\t<img src=\"{{ image_dir ~ plat['Plat'].image }}\" class=\"img-fluid rounded-start\" alt=\"{{ plat['Plat'].image }}\">
+\t\t\t\t\t\t\t\t<img src=\"{{ image_dir ~ plat['plat'].image }}\" class=\"img-fluid rounded-start\" alt=\"{{ plat['plat'].image }}\">
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"card-body col-md-5 d-flex flex-column justify-content-center\">
-\t\t\t\t\t\t\t\t<h5 class=\"card-title text-center\">{{ plat['Plat'].libelle }}</h5>
+\t\t\t\t\t\t\t\t<h5 class=\"card-title text-center\">{{ plat['plat'].libelle }}</h5>
 \t\t\t\t\t\t\t\t<hr class=\"w-50 mx-auto mt-3 mb-3\">
-\t\t\t\t\t\t\t\t<p class=\"card-text text-center\">{{ plat['Plat'].prix }}€</p>
+\t\t\t\t\t\t\t\t<p class=\"card-text text-center\">{{ plat['plat'].prix }}€</p>
 \t\t\t\t\t\t\t\t<hr class=\"w-50 mx-auto mt-0 mb-3\">
 \t\t\t\t\t\t\t\t<p class=\"card-text text-center\">Quantité:
 \t\t\t\t\t\t\t\t\t{{ plat.quantite }}</p>

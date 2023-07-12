@@ -5,7 +5,6 @@ namespace App\Controller;
 
 use App\Repository\UtilisateurRepository;
 use App\Service\PanierService;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,11 +15,14 @@ class ProfilController extends AbstractController
 {
     private $panier;
     private $utilisateurRepository;
+    private $entityManagerInterface;
 
-    public function __construct(UtilisateurRepository $utilisateurRepository, PanierService $panier)
+    public function __construct(UtilisateurRepository $utilisateurRepository, PanierService $panier, EntityManagerInterface $entityManagerInterface)
     {
         $this->utilisateurRepository = $utilisateurRepository;
         $this->panier = $panier;
+        $this->entityManagerInterface = $entityManagerInterface;
+        
     }
     #[Route('/profil', name: 'app_profil')]
     public function index(): Response
@@ -71,5 +73,32 @@ class ProfilController extends AbstractController
 
         $this->addFlash('success', 'Votre profil a bien été mis à jour !');
         return $this->redirectToRoute('app_profil');
+    }
+
+    #[Route('/profil/historique', name: 'app_historique')]
+    public function historique(): Response
+    {
+        $securityContext = $this->container->get('security.authorization_checker');
+        if ($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            $panier = $this->panier->getPanier();
+            $qtt = $this->panier->getTotalQuantity();
+            $identifiant = $this->getUser()->getUserIdentifier();
+            if ($identifiant) {
+                $info = $this->utilisateurRepository->findOneBy(["email" => $identifiant]);
+            }
+        } else {
+            $this->addFlash('error', 'Erreur : Utilisateur déconnecté ! Veuillez vous reconnecter.');
+            return $this->redirectToRoute('app_accueil');
+        }
+
+        $results = $this->utilisateurRepository->getHistorique($info->getId());
+
+        return $this->render('profil/historique.html.twig', [
+            'informations' => $info,
+            'historique' => $results,
+            'panier' => $panier,
+            'total_qtt' => $qtt,
+            
+        ]);
     }
 }

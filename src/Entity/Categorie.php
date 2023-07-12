@@ -82,7 +82,7 @@ class Categorie
         return $this->plats;
     }
 
-    public function addPlat(plat $plat): self
+    public function addPlat(Plat $plat): self
     {
         if (!$this->plats->contains($plat)) {
             $this->plats->add($plat);
@@ -92,7 +92,7 @@ class Categorie
         return $this;
     }
 
-    public function removePlat(plat $plat): self
+    public function removePlat(Plat $plat): self
     {
         if ($this->plats->removeElement($plat)) {
             // set the owning side to null (unless already changed)

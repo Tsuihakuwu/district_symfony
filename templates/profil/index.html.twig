@@ -43,8 +43,7 @@
 					<div class="form-group text-center">
 						<label for="commandes">Nombre de commandes:</label>
 						<input type="text" id="commandes" name="commandes" value="{{ informations.commandes|length }}" class="form-control mb-3" disabled>
-                        <a href="#" class="text-primary">Mon historique de commandes</a>
-                        {# TODO: Historique de commandes #}
+                        <a href="{{ path('app_historique') }}" class="text-primary">Mon historique de commandes</a>
 					</div>
                     <hr class="w-75 mx-auto mt-4 mb-3">
 					<div class="text-center mt-4">

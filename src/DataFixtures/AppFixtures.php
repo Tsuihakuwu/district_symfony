@@ -93,7 +93,7 @@ class AppFixtures extends Fixture
         $user1->setAdresse('308 Post Avenue');
         $user1->setCp('10001');
         $user1->setVille('New York');
-        $user1->setRoles('ROLE_CLIENT');
+        $user1->setRoles(["ROLE_CLIENT"]);
         
         $user2 = new Utilisateur();
         $user2->setEmail('thom@gmail.com');
@@ -104,7 +104,7 @@ class AppFixtures extends Fixture
         $user2->setAdresse('1277 Sunburst Drive');
         $user2->setCp('90001');
         $user2->setVille('Los Angeles');
-        $user2->setRoles('ROLE_CLIENT');
+        $user2->setRoles(["ROLE_CLIENT"]);
 
         $manager->persist($user1);
         $manager->persist($user2);

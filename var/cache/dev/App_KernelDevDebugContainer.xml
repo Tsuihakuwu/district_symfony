@@ -384,6 +384,7 @@
       <tag name="container.service_subscriber"/>
       <argument type="service" id="App\Service\PanierService"/>
       <argument type="service" id="App\Repository\UtilisateurRepository"/>
+      <argument type="service" id="App\Repository\PlatRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.CshazM0.App\Controller\CommandeController"/>
       </call>
@@ -413,6 +414,7 @@
       <tag name="container.service_subscriber"/>
       <argument type="service" id="App\Repository\UtilisateurRepository"/>
       <argument type="service" id="App\Service\PanierService"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.CshazM0.App\Controller\ProfilController"/>
       </call>
