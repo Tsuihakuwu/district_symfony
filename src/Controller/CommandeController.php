@@ -36,7 +36,9 @@ class CommandeController extends AbstractController
             $qtt = $this->panier->getTotalQuantity();
         } else {
             $total = 0;
-            $qtt = "";
+            $qtt = "";   
+            $this->addFlash('error', 'Erreur d\'utilisateur - Panier vide');
+            return $this->redirectToRoute('app_accueil');
         }
 
         $this->denyAccessUnlessGranted('ROLE_CLIENT');
@@ -65,7 +67,7 @@ class CommandeController extends AbstractController
         $commande->setUtilisateur($info);
         $commande->setDateCommande(new DateTime());
         $commande->setTotal($total);
-        $commande->setEtat(0);        
+        $commande->setEtat(0);
 
         $entityManager->persist($commande);
 
@@ -73,7 +75,7 @@ class CommandeController extends AbstractController
 
         // $test_plat = $this->platRepository->find(9);
 
-        foreach($panier as $item){
+        foreach ($panier as $item) {
             $detail = new Detail();
             $detail->setQuantite($item["quantite"]);
             $plat = $this->platRepository->find($item["plat"]->getId());
@@ -85,15 +87,14 @@ class CommandeController extends AbstractController
         }
 
         $entityManager->flush();
-        
 
 
         //Création Mail
+        
+        $ms->sendTemplatedEMail($info,$panier);
 
-        // $myMail = 'commande@thedistrict.fr';
-        // $ms->sendMail($data->getEmail(), $myMail, $data->getObjet(), $data->getMessage());
-
-
+        $this->panier->viderPanier();
+        
         return $this->render('commande/index.html.twig', [
             'controller_name' => 'CommandeController',
             'panier' => $panier,
@@ -101,7 +102,6 @@ class CommandeController extends AbstractController
             'adresse_client' => $adresse_client,
             'nom_client' => $nom_client,
             'mail_client' => $mail_client,
-
         ]);
     }
 }

@@ -26,6 +26,7 @@ return [
         '/profil' => [[['_route' => 'app_profil', '_controller' => 'App\\Controller\\ProfilController::index'], null, null, null, false, false, null]],
         '/profil/update' => [[['_route' => 'app_profil_update', '_controller' => 'App\\Controller\\ProfilController::profil_update'], null, null, null, false, false, null]],
         '/profil/historique' => [[['_route' => 'app_historique', '_controller' => 'App\\Controller\\ProfilController::historique'], null, null, null, false, false, null]],
+        '/react' => [[['_route' => 'app_react', '_controller' => 'App\\Controller\\ReactController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/verify/email' => [[['_route' => 'app_verify_email', '_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
@@ -33,41 +34,90 @@ return [
     ],
     [ // $regexpList
         0 => '{^(?'
-                .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:38)'
-                    .'|wdt/([^/]++)(*:57)'
-                    .'|profiler/([^/]++)(?'
-                        .'|/(?'
-                            .'|search/results(*:102)'
-                            .'|router(*:116)'
-                            .'|exception(?'
-                                .'|(*:136)'
-                                .'|\\.css(*:149)'
+                .'|/api(?'
+                    .'|/\\.well\\-known/genid/([^/]++)(*:43)'
+                    .'|(?:/(index)(?:\\.([^/]++))?)?(*:78)'
+                    .'|/(?'
+                        .'|docs(?:\\.([^/]++))?(*:108)'
+                        .'|c(?'
+                            .'|ontexts/([^.]+)(?:\\.(jsonld))?(*:150)'
+                            .'|ategories(?'
+                                .'|/([^/\\.]++)(?:\\.([^/]++))?(?'
+                                    .'|(*:199)'
+                                .')'
+                                .'|(?:\\.([^/]++))?(?'
+                                    .'|(*:226)'
+                                .')'
                             .')'
                         .')'
-                        .'|(*:159)'
+                        .'|plats(?'
+                            .'|/([^/\\.]++)(?:\\.([^/]++))?(*:271)'
+                            .'|(?:\\.([^/]++))?(?'
+                                .'|(*:297)'
+                            .')'
+                            .'|/([^/\\.]++)(?:\\.([^/]++))?(?'
+                                .'|(*:335)'
+                            .')'
+                        .')'
+                    .')'
+                .')'
+                .'|/_(?'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:378)'
+                    .'|wdt/([^/]++)(*:398)'
+                    .'|profiler/([^/]++)(?'
+                        .'|/(?'
+                            .'|search/results(*:444)'
+                            .'|router(*:458)'
+                            .'|exception(?'
+                                .'|(*:478)'
+                                .'|\\.css(*:491)'
+                            .')'
+                        .')'
+                        .'|(*:501)'
                     .')'
                 .')'
                 .'|/p(?'
-                    .'|lat/([^/]++)(*:186)'
+                    .'|lat/([^/]++)(*:528)'
                     .'|anier/(?'
-                        .'|add/([^/]++)(*:215)'
-                        .'|delete/([^/]++)(*:238)'
+                        .'|add/([^/]++)(*:557)'
+                        .'|delete/([^/]++)(*:580)'
                     .')'
                 .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        38 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        57 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        102 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        186 => [[['_route' => 'app_platwithcat', '_controller' => 'App\\Controller\\CatalogueController::platwithcat'], ['categorie_id'], null, null, false, true, null]],
-        215 => [[['_route' => 'app_panier_ajout', '_controller' => 'App\\Controller\\PanierController::ajout_plat'], ['id_plat'], null, null, false, true, null]],
-        238 => [
+        43 => [[['_route' => 'api_genid', '_controller' => 'api_platform.action.not_exposed', '_api_respond' => 'true'], ['id'], null, null, false, true, null]],
+        78 => [[['_route' => 'api_entrypoint', '_controller' => 'api_platform.action.entrypoint', '_format' => '', '_api_respond' => 'true', 'index' => 'index'], ['index', '_format'], null, null, false, true, null]],
+        108 => [[['_route' => 'api_doc', '_controller' => 'api_platform.action.documentation', '_format' => '', '_api_respond' => 'true'], ['_format'], null, null, false, true, null]],
+        150 => [[['_route' => 'api_jsonld_context', '_controller' => 'api_platform.jsonld.action.context', '_format' => 'jsonld', '_api_respond' => 'true'], ['shortName', '_format'], null, null, false, true, null]],
+        199 => [
+            [['_route' => '_api_/categories/{id}{._format}_get', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Categorie', '_api_operation_name' => '_api_/categories/{id}{._format}_get'], ['id', '_format'], ['GET' => 0], null, false, true, null],
+            [['_route' => '_api_/categories/{id}{._format}_put', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Categorie', '_api_operation_name' => '_api_/categories/{id}{._format}_put'], ['id', '_format'], ['PUT' => 0], null, false, true, null],
+        ],
+        226 => [
+            [['_route' => '_api_/categories{._format}_get_collection', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Categorie', '_api_operation_name' => '_api_/categories{._format}_get_collection'], ['_format'], ['GET' => 0], null, false, true, null],
+            [['_route' => '_api_/categories{._format}_post', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Categorie', '_api_operation_name' => '_api_/categories{._format}_post'], ['_format'], ['POST' => 0], null, false, true, null],
+        ],
+        271 => [[['_route' => '_api_/plats/{id}{._format}_get', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Plat', '_api_operation_name' => '_api_/plats/{id}{._format}_get'], ['id', '_format'], ['GET' => 0], null, false, true, null]],
+        297 => [
+            [['_route' => '_api_/plats{._format}_get_collection', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Plat', '_api_operation_name' => '_api_/plats{._format}_get_collection'], ['_format'], ['GET' => 0], null, false, true, null],
+            [['_route' => '_api_/plats{._format}_post', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Plat', '_api_operation_name' => '_api_/plats{._format}_post'], ['_format'], ['POST' => 0], null, false, true, null],
+        ],
+        335 => [
+            [['_route' => '_api_/plats/{id}{._format}_put', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Plat', '_api_operation_name' => '_api_/plats/{id}{._format}_put'], ['id', '_format'], ['PUT' => 0], null, false, true, null],
+            [['_route' => '_api_/plats/{id}{._format}_patch', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Plat', '_api_operation_name' => '_api_/plats/{id}{._format}_patch'], ['id', '_format'], ['PATCH' => 0], null, false, true, null],
+            [['_route' => '_api_/plats/{id}{._format}_delete', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Plat', '_api_operation_name' => '_api_/plats/{id}{._format}_delete'], ['id', '_format'], ['DELETE' => 0], null, false, true, null],
+        ],
+        378 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        398 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        444 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        458 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        478 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        491 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        501 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        528 => [[['_route' => 'app_platwithcat', '_controller' => 'App\\Controller\\CatalogueController::platwithcat'], ['categorie_id'], null, null, false, true, null]],
+        557 => [[['_route' => 'app_panier_ajout', '_controller' => 'App\\Controller\\PanierController::ajout_plat'], ['id_plat'], null, null, false, true, null]],
+        580 => [
             [['_route' => 'app_panier_delete', '_controller' => 'App\\Controller\\PanierController::delete_plat'], ['id_plat'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

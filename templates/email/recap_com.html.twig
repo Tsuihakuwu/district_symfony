@@ -1,0 +1,69 @@
+{% apply inline_css %}
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Réinitialisation Mot de passe</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style>
+			.mnb {
+				box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.75);
+				-webkit-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.75);
+				-moz-box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.75);
+				background-color: #440320e1;
+				color: aliceblue;
+				margin: 1rem;
+			}
+			.logo_rt {
+				transform: rotate(-17deg);
+				filter: drop-shadow(6px 8px 10px #000);
+				width: 337px;
+			}
+			.center {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="text-center rounded p-3 mnb">
+			<h1 class='h3 text-center'>Récapitulatif de votre commande</h1>
+			<p>Bonjour
+				{{ user.nom ~ " " ~ user.prenom }}
+				et merci de votre commande !</p>
+			<p>Voici un récapitulatif :</p>
+			
+			{% for plat in panier %}
+				<div class="col-md-4 mt-3 mb-3 center">
+					<div class="border-0 text-white">
+						<div class="row g-0">
+							<div class="col-md-7">
+								<img src="{{ email.image('@image_directory/' ~ plat["plat"].image) }}" class="img-fluid rounded" alt="{{ plat['plat'].image }}">
+							</div>
+							<div class="card-body col-md-5 d-flex flex-column justify-content-center">
+								<h5 class="card-title text-center">{{ plat['plat'].libelle }}</h5>
+								<hr class="w-50 mx-auto mt-3 mb-3">
+								<p class="card-text text-center">{{ plat['plat'].prix }}€</p>
+								<hr class="w-50 mx-auto mt-0 mb-3">
+								<p class="card-text text-center">Quantité:
+									{{ plat.quantite }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+
+			<p>Votre adresse de livraison :</p>
+			<p>{{ user.nom }} {{ user.prenom }}
+			<br>
+			{{ user.adresse }} {{ user.cp }} {{ user.ville }}
+			</p>
+
+			<p>En esperant vous revoir bientot sur notre site !</p>
+			<img src="{{ email.image('@image_directory/logo_transparent_sm.webp') }}" alt="logo_the_district" class="logo_rt">
+
+		</div>
+	</body>
+</html>
+{% endapply %}
