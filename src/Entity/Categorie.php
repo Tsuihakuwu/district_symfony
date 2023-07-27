@@ -15,14 +15,10 @@ use ApiPlatform\Metadata\Post;
 use ApiPlatform\Metadata\Put;
 
 #[ORM\Entity(repositoryClass: CategorieRepository::class)]
-#[ApiResource(security: "is_granted('ROLE_USER')",
+#[ApiResource(
     normalizationContext: ['groups' => ['read']],
     denormalizationContext: ['groups' => ['write']],
 )]
-#[Get(security: "is_granted('ROLE_ADMIN')")]
-#[Put(security: "is_granted('ROLE_ADMIN')")]
-#[GetCollection(security: "is_granted('ROLE_ADMIN')")]
-#[Post(security: "is_granted('ROLE_ADMIN')")]
 class Categorie
 {
     #[ORM\Id]
@@ -42,7 +38,6 @@ class Categorie
     private ?bool $active = null;
 
     #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Plat::class)]
-    #[Groups(['read'])]
     private Collection $plats;
 
     public function __construct()

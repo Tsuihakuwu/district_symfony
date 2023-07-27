@@ -309,8 +309,7 @@ class __TwigTemplate_a4fe86ce50c9008eed95f76bcca1cf05 extends Template
         $this->displayBlock('javascripts', $context, $blocks);
         // line 149
         echo "\t</body>
-</html></body></html></body></html>
-";
+</html></body></html></body></html>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -415,7 +414,7 @@ class __TwigTemplate_a4fe86ce50c9008eed95f76bcca1cf05 extends Template
 
     public function getDebugInfo()
     {
-        return array (  394 => 145,  384 => 144,  366 => 113,  348 => 19,  336 => 10,  333 => 9,  323 => 8,  311 => 149,  309 => 144,  299 => 137,  293 => 134,  284 => 128,  278 => 125,  272 => 122,  266 => 119,  259 => 114,  257 => 113,  253 => 111,  244 => 108,  241 => 107,  236 => 106,  227 => 103,  224 => 102,  220 => 101,  213 => 96,  206 => 92,  202 => 90,  200 => 89,  194 => 86,  190 => 85,  186 => 83,  184 => 82,  182 => 81,  178 => 79,  174 => 77,  169 => 75,  163 => 71,  161 => 70,  158 => 69,  156 => 68,  152 => 67,  149 => 66,  143 => 63,  140 => 62,  138 => 61,  133 => 59,  127 => 56,  121 => 53,  115 => 50,  100 => 38,  96 => 37,  87 => 31,  80 => 27,  71 => 20,  69 => 19,  58 => 12,  56 => 8,  47 => 1,);
+        return array (  393 => 145,  383 => 144,  365 => 113,  347 => 19,  335 => 10,  332 => 9,  322 => 8,  311 => 149,  309 => 144,  299 => 137,  293 => 134,  284 => 128,  278 => 125,  272 => 122,  266 => 119,  259 => 114,  257 => 113,  253 => 111,  244 => 108,  241 => 107,  236 => 106,  227 => 103,  224 => 102,  220 => 101,  213 => 96,  206 => 92,  202 => 90,  200 => 89,  194 => 86,  190 => 85,  186 => 83,  184 => 82,  182 => 81,  178 => 79,  174 => 77,  169 => 75,  163 => 71,  161 => 70,  158 => 69,  156 => 68,  152 => 67,  149 => 66,  143 => 63,  140 => 62,  138 => 61,  133 => 59,  127 => 56,  121 => 53,  115 => 50,  100 => 38,  96 => 37,  87 => 31,  80 => 27,  71 => 20,  69 => 19,  58 => 12,  56 => 8,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -569,7 +568,6 @@ class __TwigTemplate_a4fe86ce50c9008eed95f76bcca1cf05 extends Template
 \t\t\t<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe\" crossorigin=\"anonymous\"></script>
 \t\t{% endblock %}
 \t</body>
-</html></body></html></body></html>
-", "base.html.twig", "/home/stagiaire/Bureau/the_district_symfony/templates/base.html.twig");
+</html></body></html></body></html>", "base.html.twig", "/home/stagiaire/Bureau/the_district_symfony/templates/base.html.twig");
     }
 }

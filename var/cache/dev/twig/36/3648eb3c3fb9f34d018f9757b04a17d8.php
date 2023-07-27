@@ -86,7 +86,14 @@ class __TwigTemplate_fc856b9c5bfd0e228c3ec389b95b3a2a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 7
-        echo "     <div id=\"react-app\"></div>
+        echo "
+     <div id=\"react-app\"></div>
+     
+     ";
+        // line 10
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app-react");
+        echo "
+     
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -108,7 +115,7 @@ class __TwigTemplate_fc856b9c5bfd0e228c3ec389b95b3a2a extends Template
 
     public function getDebugInfo()
     {
-        return array (  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  94 => 10,  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -119,7 +126,11 @@ class __TwigTemplate_fc856b9c5bfd0e228c3ec389b95b3a2a extends Template
 {% endblock %}
 
 {% block body %}
+
      <div id=\"react-app\"></div>
+     
+     {{ encore_entry_script_tags('app-react') }}
+     
 {% endblock %}", "react/index.html.twig", "/home/stagiaire/Bureau/the_district_symfony/templates/react/index.html.twig");
     }
 }
